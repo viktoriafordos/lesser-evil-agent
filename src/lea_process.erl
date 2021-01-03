@@ -5,7 +5,10 @@
                     garbage_collection, status, stack_size, reductions]).
 -define(KEYS, [group_leader | ?BASE_KEYS]).
 
--export([data/0, data_m/0, data/1, app_group_leaders/1, filtered_app_group_leaders/1]).
+-define(API, [data/0, data_m/0, data/1,
+              app_group_leaders/1, filtered_app_group_leaders/1]).
+-ignore_xref(?API).
+-export(?API).
 
 data(Apps) ->
   GroupLeadersApp = filtered_app_group_leaders(Apps),
@@ -34,7 +37,7 @@ data() ->
         case erlang:process_info(Pid, ?KEYS) of
           undefined -> false;
           PI -> {true, {Pid, add_app(PI, AppGroupLeaders)}}
-        end          
+        end
     end,
     erlang:processes()).
 
@@ -42,7 +45,7 @@ data_m() ->
   AppGroupLeaders = app_group_leaders(pid_app),
   [begin
      PI = maps:from_list(erlang:process_info(Pid, ?KEYS)),
-     {Pid, add_app_m(PI, AppGroupLeaders)} 
+     {Pid, add_app_m(PI, AppGroupLeaders)}
    end
    || Pid <- erlang:processes()].
 
@@ -51,11 +54,11 @@ add_app(PI, GL) ->
   %% lists:keyreplace(group_leader, 1, PI, {application, maps:get(Pid, GL, undefined)}).
   lists:foldl(fun({group_leader, Pid}, Acc) ->
                   [{application, maps:get(Pid, GL, undefined)} | Acc];
-                 (V, Acc) -> [V | Acc] 
+                 (V, Acc) -> [V | Acc]
               end, [], PI).
 
 add_app_m(PI0, GL) ->
-  {Pid, PI1} = maps:take(group_leader, PI0), 
+  {Pid, PI1} = maps:take(group_leader, PI0),
   PI1#{application => maps:get(Pid, GL, undefined)}.
 
 filtered_app_group_leaders(Apps) ->
@@ -66,7 +69,7 @@ app_group_leaders(Way) ->
   WayFun = way_fun(Way),
   lists:foldl(fun({App, Pid}, Acc) ->
                   case Pid of
-                    undefined -> Acc; 
+                    undefined -> Acc;
                     _ -> WayFun(Pid, App, Acc)
                   end
               end, #{}, proplists:get_value(running, application_controller:info())).
@@ -88,14 +91,14 @@ app_pid(Pid, App, Acc) -> Acc#{App => Pid}.
 
 
 
-%% 8> erlang:process_info(self(), binary).                                                                                                                                                                          {binary,[{339769704,281,2},{339769376,125,2}]}                                    
+%% 8> erlang:process_info(self(), binary).                                                                                                                                                                          {binary,[{339769704,281,2},{339769376,125,2}]}
 %% 9> erlang:process_info(self(), memory).
 %% {memory,88532}
 %% 10> erlang:process_info(self(), message_queue_len).
 %% {message_queue_len,0}
-%% 11> erlang:process_info(self(), heap_size).        
+%% 11> erlang:process_info(self(), heap_size).
 %% {heap_size,6772}
-%% 12> erlang:process_info(self(), total_heap_size).              
+%% 12> erlang:process_info(self(), total_heap_size).
 %% {total_heap_size,13544}
 %% 13> erlang:process_info(self(), garbage_collection).
 %% {garbage_collection,[{max_heap_size,#{error_logger => true,kill => true,size => 0}},
@@ -103,7 +106,7 @@ app_pid(Pid, App, Acc) -> Acc#{App => Pid}.
 %%                      {min_heap_size,233},
 %%                      {fullsweep_after,65535},
 %%                      {minor_gcs,2}]}
-%% 14> erlang:process_info(self()).                    
+%% 14> erlang:process_info(self()).
 %% [{current_function,{erl_eval,do_apply,6}},
 %%  {initial_call,{erlang,apply,2}},
 %%  {status,running},

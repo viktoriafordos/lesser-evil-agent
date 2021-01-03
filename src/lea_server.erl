@@ -8,7 +8,9 @@
 -behaviour(gen_server).
 
 %% API
--export([start_link/1, start_link/0, stop/0]).
+-define(API, [start_link/1, start_link/0, stop/0]).
+-ignore_xref(?API).
+-export(?API).
 
 %% gen_server callbacks
 -export([init/1, handle_call/3, handle_cast/2, handle_info/2,
