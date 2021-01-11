@@ -5,7 +5,8 @@
   {mod, {lesser_evil_agent_app, []}},
   {applications,
    [kernel,
-    stdlib
+    stdlib,
+    os_mon
    ]},
   {env,[]},
   {modules, []},
