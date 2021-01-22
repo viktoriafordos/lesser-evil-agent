@@ -1,8 +1,7 @@
 %% module to extract process info data
 -module(lea_process).
 
--define(BASE_KEYS, [memory, message_queue_len, heap_size, total_heap_size,
-                    garbage_collection, status, stack_size, reductions]).
+-define(BASE_KEYS, [memory, message_queue_len, priority, links, monitored_by, reductions]).
 -define(KEYS, [group_leader | ?BASE_KEYS]).
 
 -define(API, [data/0, data_m/0, data/1,

@@ -8,7 +8,7 @@
 -behaviour(gen_server).
 
 %% API
--define(API, [start_link/1, start_link/0, stop/0]).
+-define(API, [start_link/0]).
 -ignore_xref(?API).
 -export(?API).
 
@@ -16,53 +16,71 @@
 -export([init/1, handle_call/3, handle_cast/2, handle_info/2,
          terminate/2, code_change/3, format_status/2]).
 
--define(SERVER, ?MODULE).
+-define(CONNECT_TIMEOUT, 5000).
 
 -record(state, {connected = false,
-                le_node = undefined}).
+                le_node = undefined,
+                le_cookie = fun()-> not_a_cookie end,
+                report_interval = 10000}).
 
 %%%===================================================================
 %%% API
 %%%===================================================================
 
-start_link(Node) ->
-  gen_server:start_link({local, ?SERVER}, ?MODULE, [Node], []).
-
 start_link() ->
-  gen_server:start_link({local, ?SERVER}, ?MODULE, ['lesser_evil@touriga'], []).
-
-stop() ->
-  gen_server:stop(?SERVER).
+  gen_server:start_link(?MODULE, [], []).
 
 %%%===================================================================
 %%% gen_server callbacks
 %%%===================================================================
 
-init([Node]) ->
+init([]) ->
   process_flag(trap_exit, true),
-  erlang:send_after(100, ?SERVER, {connect, Node, 200}),
-  {ok, #state{le_node = Node}}.
+
+  {ok, ServerHost} = application:get_env(lesser_evil_agent, server_host),
+  true = is_atom(ServerHost),
+  {ok, ServerCookie} = application:get_env(lesser_evil_agent, server_cookie),
+  true = is_atom(ServerCookie),
+  {ok, ReportInt} = application:get_env(lesser_evil_agent, report_interval),
+  true = (is_integer(ReportInt) andalso ReportInt > 10000),
+
+  self() ! connect,
+
+  {ok, #state{connected = false,
+              le_node = ServerHost,
+              le_cookie = fun()-> ServerCookie end,
+              report_interval = ReportInt}}.
 
 handle_call(_Request, _From, State) ->
-  %% Reply = spawn(fun() -> receive blaa -> ok end end),
-  Reply = ok,
-  {reply, Reply, State}.
+  {noreply, State}.
 
 handle_cast(_Request, State) ->
   {noreply, State}.
 
-handle_info({connect, Node, Time}, #state{connected = false} = State) ->
+handle_info(connect,
+            #state{connected = false,
+                   le_node = Node,
+                   le_cookie = CookieFun,
+                   report_interval = ReportInt} = State) ->
+  true = erlang:set_cookie(Node, CookieFun()),
   case net_adm:ping(Node) of
-    pong -> {noreply, State#state{connected = true}};
+    pong ->
+      true = erlang:monitor_node(Node, true),
+      le_cast({new_agent, node(), self()}, State),
+      erlang:send_after(ReportInt, self(), publish_process_data),
+      {noreply, State#state{connected = true}};
     pang ->
-      erlang:send_after(Time, ?SERVER, {connect, Node, Time * 2}),
+      erlang:send_after(?CONNECT_TIMEOUT, self(), connect),
       {noreply, State}
   end;
+handle_info({nodedown, Node}, #state{le_node = Node} = State) ->
+  erlang:send_after(?CONNECT_TIMEOUT, self(), connect),
+  {noreply, State#state{connected = false}};
 handle_info(publish_process_data, #state{connected = true} = State) ->
   PData = lea_process:data(),
-  Message = {pdata, node(), benfica},
-  Dest = {le_monitor_server, State#state.le_node},
-  gen_server:cast(Dest, Message),
+  SysData = [],
+  Message = {report, node(), PData, SysData},
+  le_cast(Message, State),
   {noreply, State};
 handle_info(_Info, State) ->
   {noreply, State}.
@@ -79,3 +97,6 @@ format_status(_Opt, Status) ->
 %%%===================================================================
 %%% Internal functions
 %%%===================================================================
+
+le_cast(Msg, #state{le_node = Node}) ->
+  gen_server:cast({le_monitor_server, Node}, Msg).
