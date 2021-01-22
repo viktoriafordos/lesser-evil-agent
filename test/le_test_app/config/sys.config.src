@@ -2,7 +2,7 @@
   {le_test_app, []},
   {lesser_evil_agent,
    [{server_cookie, super_secret_cookie},
-    {server_host, 'lesser_evil_server@${HOST}'},
+    {server_host, 'lesser_evil@${HOST}'},
     {applications, [lesser_evil_agent]},
     {report_interval, 20000}]}
 ].

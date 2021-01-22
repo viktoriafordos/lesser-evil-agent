@@ -16,7 +16,7 @@
 -export([init/1, handle_call/3, handle_cast/2, handle_info/2,
          terminate/2, code_change/3, format_status/2]).
 
--define(CONNECT_TIMEOUT, 5000).
+-define(CONNECT_TIMEOUT, 20000).
 
 -record(state, {connected = false,
                 le_node = undefined,
@@ -76,11 +76,14 @@ handle_info(connect,
 handle_info({nodedown, Node}, #state{le_node = Node} = State) ->
   erlang:send_after(?CONNECT_TIMEOUT, self(), connect),
   {noreply, State#state{connected = false}};
-handle_info(publish_process_data, #state{connected = true} = State) ->
+handle_info(publish_process_data,
+            #state{connected = true,
+                   report_interval = ReportInt} = State) ->
   PData = lea_process:data(),
   SysData = [],
   Message = {report, node(), PData, SysData},
   le_cast(Message, State),
+  erlang:send_after(ReportInt, self(), publish_process_data),
   {noreply, State};
 handle_info(_Info, State) ->
   {noreply, State}.

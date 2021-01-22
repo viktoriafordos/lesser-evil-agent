@@ -23,22 +23,31 @@ maybe_process_info({_, GLPid}, Pid, GroupLeadersApp) ->
     {ok, App} ->
       case erlang:process_info(Pid, ?BASE_KEYS) of
         undefined -> false;
-        PI -> {true, [{application, App} | PI]}
+        PI -> {true, create_proc_data(Pid, App, PI)}
       end;
     error ->
       false
   end.
 
+create_proc_data(Pid, App, PI) ->
+  M = maps:from_list(PI),
+  M#{pid => Pid,
+     application => App,
+     monitored_by => length(maps:get(monitored_by, M)),
+     links => length(maps:get(links, M))}.
+
 data() ->
-  AppGroupLeaders = app_group_leaders(pid_app),
-  lists:filtermap(
-    fun(Pid) ->
-        case erlang:process_info(Pid, ?KEYS) of
-          undefined -> false;
-          PI -> {true, {Pid, add_app(PI, AppGroupLeaders)}}
-        end
-    end,
-    erlang:processes()).
+  {ok, Apps} = application:get_env(lesser_evil_agent, applications),
+  data(Apps).
+  % AppGroupLeaders = app_group_leaders(pid_app),
+  % lists:filtermap(
+  %   fun(Pid) ->
+  %       case erlang:process_info(Pid, ?KEYS) of
+  %         undefined -> false;
+  %         PI -> {true, {Pid, add_app(PI, AppGroupLeaders)}}
+  %       end
+  %   end,
+  %   erlang:processes()).
 
 data_m() ->
   AppGroupLeaders = app_group_leaders(pid_app),
