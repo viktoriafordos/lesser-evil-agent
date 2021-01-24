@@ -29,3 +29,6 @@ unlock:
 
 lock:
 	rebar3 lock
+
+start:
+	rebar3 shell --sname lesser_evil_agent
