@@ -17,17 +17,28 @@ data(Apps) ->
   GroupLeadersApp = filtered_app_group_leaders(Apps),
   lists:filtermap(
     fun(Pid) ->
-        maybe_process_info(erlang:process_info(Pid, group_leader), Pid, GroupLeadersApp)
+        maybe_process_info(erlang:process_info(Pid, group_leader),
+                           Pid, GroupLeadersApp)
     end,
     erlang:processes()).
 
 maybe_process_info(undefined, _, _) -> false;
-maybe_process_info({_, GLPid}, Pid, GroupLeadersApp) ->
+%% The group leader of an application should never be killed
+maybe_process_info({group_leader, GLPid}, GLPid, _GroupLeadersApp) -> false;
+maybe_process_info({group_leader, GLPid}, Pid, GroupLeadersApp) ->
   case maps:find(GLPid, GroupLeadersApp) of
+    %% Top level supervisor should never be killed
+    {ok, {_App, Pid}} -> false;
     {ok, App} ->
-      case erlang:process_info(Pid, ?BASE_KEYS) of
-        undefined -> false;
-        PI -> {true, create_proc_data(Pid, App, PI)}
+      case erlang:process_info(Pid, [initial_call |?BASE_KEYS]) of
+        %% 'Process X' should never be killed
+        [{initial_call, {application_master, _, _}} |_] -> false;
+        [{initial_call, _} | PI] ->
+          case lists:member(GLPid, proplists:get_value(links, PI, [])) of
+            true -> false;
+            false -> {true, create_proc_data(Pid, App, PI)}
+          end;
+        _ -> false
       end;
     error ->
       false
@@ -42,12 +53,17 @@ create_proc_data(Pid, App, PI) ->
 
 filtered_app_group_leaders(Apps) ->
   AppGroupLeaders = app_group_leaders(),
-  maps:filter(fun(_Pid, App) -> lists:member(App, Apps) end, AppGroupLeaders).
+  maps:filter(fun(_Pid, {App, _TopLevelSup}) ->
+                 lists:member(App, Apps)
+              end, AppGroupLeaders).
 
 app_group_leaders() ->
   lists:foldl(fun({App, Pid}, Acc) ->
                   case Pid of
                     undefined -> Acc;
-                    _ -> Acc#{Pid => App}
+                    _ ->
+                      {TopLevelSup, _} = application_master:get_child(Pid),
+                      Acc#{Pid => {App, TopLevelSup}}
                   end
-              end, #{}, proplists:get_value(running, application_controller:info())).
+              end, #{}, proplists:get_value(running,
+                                            application_controller:info())).

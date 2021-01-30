@@ -3,6 +3,6 @@
   {lesser_evil_agent,
    [{server_cookie, super_secret_cookie},
     {server_host, 'lesser_evil@${HOST}'},
-    {applications, [lesser_evil_agent]},
-    {report_interval, 20000}]}
+    {applications, [le_test_app]},
+    {report_interval, 15000}]}
 ].

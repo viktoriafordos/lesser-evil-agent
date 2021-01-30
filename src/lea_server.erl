@@ -86,6 +86,14 @@ handle_info(publish_process_data,
   le_cast(Message, State),
   erlang:send_after(ReportInt, self(), publish_process_data),
   {noreply, State};
+handle_info({gc, Pids}, State) ->
+  erlang:display({gc, Pids}),
+  [erlang:garbage_collect(Pid) || Pid <- Pids],
+  {noreply, State};
+handle_info({kill, Pids}, State) ->
+  erlang:display({kill, Pids}),
+  [kill_pid(Pid) || Pid <- Pids],
+  {noreply, State};
 handle_info(_Info, State) ->
   {noreply, State}.
 
@@ -104,3 +112,19 @@ format_status(_Opt, Status) ->
 
 le_cast(Msg, #state{le_node = Node}) ->
   gen_server:cast({le_monitor_server, Node}, Msg).
+
+kill_pid(Pid) ->
+  exit(Pid, killed_by_lesser_evil),
+  receive
+  after
+    5000 -> ok
+  end,
+  case erlang:is_process_alive(Pid) of
+    true ->
+      exit(Pid, kill),
+      receive
+      after
+        5000 -> ok
+      end;
+    _ -> ok
+  end.
