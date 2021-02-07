@@ -3,18 +3,16 @@
 %% @end
 %%%-------------------------------------------------------------------
 
--module(le_test_app_sup).
+-module(leta_sup).
 
 -behaviour(supervisor).
 
--export([start_link/0]).
-
--export([init/1]).
+-export([start_link/0, init/1]).
 
 -define(SERVER, ?MODULE).
 
 start_link() ->
-    supervisor:start_link({local, ?SERVER}, ?MODULE, []).
+  supervisor:start_link({local, ?SERVER}, ?MODULE, []).
 
 %% sup_flags() = #{strategy => strategy(),         % optional
 %%                 intensity => non_neg_integer(), % optional
@@ -26,10 +24,12 @@ start_link() ->
 %%                  type => worker(),       % optional
 %%                  modules => modules()}   % optional
 init([]) ->
-    SupFlags = #{strategy => one_for_all,
-                 intensity => 10,
-                 period => 10},
-    ChildSpecs = [],
-    {ok, {SupFlags, ChildSpecs}}.
+  SupFlags = #{strategy => one_for_all,
+               intensity => 0,
+               period => 1},
+  ChildSpecs = [#{id => leta_books_server,
+                  start => {leta_books, start_link, []}
+                 }],
+  {ok, {SupFlags, ChildSpecs}}.
 
 %% internal functions
