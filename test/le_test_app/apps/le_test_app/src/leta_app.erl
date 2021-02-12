@@ -33,8 +33,7 @@ start_cowboy() ->
         }
       ]),
 
-  {ok, Pid} = cowboy:start_clear(http_listener,
+  {ok, _Pid} = cowboy:start_clear(http_listener,
                                  [{port, Port}, {ip, ParsedIp}],
                                  #{env => #{dispatch => Dispatch}}),
-  erlang:display(Pid),
   ok.

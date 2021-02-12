@@ -7,13 +7,13 @@
 -behaviour(gen_server).
 
 %% API
--export([start_link/0, get_names/0]).
+-export([start_link/0, get_names/0, get_watermarked/2, get_chapter/2]).
 
 %% gen_server callbacks
 -export([init/1, handle_call/3, handle_cast/2]).
 
 %% temp
--export([initial_state/0]).
+-export([initial_state/0, compress/1, decompress/1]).
 
 -define(SERVER, ?MODULE).
 -define(MAX_WORDS, 10000000).
@@ -32,8 +32,22 @@ get_names() ->
   Books = gen_server:call(?SERVER, books),
   [Name || #{book_name := Name} <- Books].
 
-get_watermarked(Id) ->
-  ok.
+get_chapter(GivenId, ChapterNum) ->
+  Fun = fun(BookText) ->
+            ChapterNumBin = integer_to_binary(ChapterNum),
+            {match, [[ChapterText]]} =
+              re:run(BookText,
+                     <<".*?(# Chapter", ChapterNumBin/binary, "\\n.*)(#|$)">>,
+                     [global, {capture, [1], binary}]),
+            ChapterText
+        end,
+  find_book_and_map(GivenId, Fun).
+
+
+get_watermarked(GivenId, Name) ->
+  Watermark = <<"<<< Licensed to ", Name/binary, ">>>">>,
+  Fun = fun(BookText) -> <<Watermark/binary, BookText/binary>> end,
+  find_book_and_map(GivenId, Fun).
 
 %%%===================================================================
 %%% gen_server callbacks
@@ -74,7 +88,7 @@ create(0, _, _) -> [];
 create(N, MaxWords, BooksDir) ->
   Parent = self(),
   BookWords = MaxWords div N,
-  BookName = leta_book_gen:word(12),
+  BookName = integer_to_list(N) ++ leta_book_gen:word(12),
   BookPath = mk_path(BooksDir, BookName),
   spawn(fun() ->
             Book = leta_book_gen:book(?CHAPTERS, BookWords div ?CHAPTERS),
@@ -89,8 +103,9 @@ create(N, MaxWords, BooksDir) ->
 
 
 load(BookFileNames, BooksDir) ->
-  [#{book_name => BookName, path => mk_path(BooksDir, BookName)}
-   || BookName <- BookFileNames].
+  [#{book_name => BookName, path => mk_path(BooksDir, BookName),
+     id => list_to_integer([Id])}
+   || [Id | _] = BookName <- BookFileNames].
 
 mk_path(Path, FileName) ->
   Path ++ "/" ++ FileName.
@@ -111,3 +126,15 @@ decompress(Binary) ->
   ok = zlib:inflateEnd(Z),
   ok = zlib:close(Z),
   iolist_to_binary(Decompressed).
+
+find_book_and_map(GivenId, Fun) ->
+  Books = gen_server:call(?SERVER, books),
+  FilterFun = fun(#{id := Id}) -> GivenId =/= Id end,
+  case lists:filter(FilterFun, Books) of
+    [] -> {error, not_found};
+    [#{path := Path} | _] ->
+      {ok, Compressed} = file:read_file(Path),
+      BookText = decompress(Compressed),
+      ResText = Fun(BookText),
+      compress(ResText)
+  end.
