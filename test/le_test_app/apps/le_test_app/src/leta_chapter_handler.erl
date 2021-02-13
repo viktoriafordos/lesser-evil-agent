@@ -8,11 +8,14 @@ init(Req, Opts) ->
   handle_path(Req, Path, Opts).
 
 handle_path(Req0, _, Opts) ->
-  BookId = cowboy_req:binding(id, Req0),
-  ChapterNumber = cowboy_req:binding(chapter_number, Req0),
+  BookIdBin = cowboy_req:binding(id, Req0),
+  BookId = binary_to_integer(BookIdBin),
+  ChapterNumberBin = cowboy_req:binding(chapter_num, Req0),
+  ChapterNumber = binary_to_integer(ChapterNumberBin),
+  CompressedChapter = letdb_books:get_chapter(BookId, ChapterNumber),
   Req = cowboy_req:reply(200,
-                         #{<<"content-type">> => <<"text/plain">>},
-                         <<"Viva ao Benfica!">>,
+                         #{<<"content-type">> => <<"application/octet-stream">>},
+                         CompressedChapter,
                          Req0),
   {ok, Req, Opts}.
 

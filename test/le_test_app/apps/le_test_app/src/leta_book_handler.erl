@@ -8,10 +8,13 @@ init(Req, Opts) ->
   handle_path(Req, Path, Opts).
 
 handle_path(Req0, _, Opts) ->
-  BookId = cowboy_req:binding(id, Req0),
+  BookIdBin = cowboy_req:binding(id, Req0),
+  BookId = binary_to_integer(BookIdBin),
+  Name = letdb_book_gen:word(10),
+  CompressedBook = letdb_books:get_watermarked(BookId, Name),
   Req = cowboy_req:reply(200,
-                         #{<<"content-type">> => <<"text/plain">>},
-                         <<"Viva ao Benfica!">>,
+                         #{<<"content-type">> => <<"application/octet-stream">>},
+                         CompressedBook,
                          Req0),
   {ok, Req, Opts}.
 

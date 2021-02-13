@@ -37,13 +37,15 @@ get_chapter(GivenId, ChapterNum) ->
             ChapterNumBin = integer_to_binary(ChapterNum),
             {match, [[ChapterText]]} =
               re:run(BookText,
-                     <<".*?(# Chapter", ChapterNumBin/binary, "\\n.*)(#|$)">>,
+                     <<".*?(# Chapter", ChapterNumBin/binary, "\\n.*)(?#|$)">>,
                      [global, {capture, [1], binary}]),
             ChapterText
         end,
   find_book_and_map(GivenId, Fun).
 
 
+get_watermarked(GivenId, Name) when is_list(Name) ->
+  get_watermarked(GivenId, list_to_binary(Name));
 get_watermarked(GivenId, Name) ->
   Watermark = <<"<<< Licensed to ", Name/binary, ">>>">>,
   Fun = fun(BookText) -> <<Watermark/binary, BookText/binary>> end,
@@ -129,7 +131,7 @@ decompress(Binary) ->
 
 find_book_and_map(GivenId, Fun) ->
   Books = gen_server:call(?SERVER, books),
-  FilterFun = fun(#{id := Id}) -> GivenId =/= Id end,
+  FilterFun = fun(#{id := Id}) -> GivenId == Id end,
   case lists:filter(FilterFun, Books) of
     [] -> {error, not_found};
     [#{path := Path} | _] ->
