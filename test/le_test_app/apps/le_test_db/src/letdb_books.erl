@@ -2,7 +2,7 @@
 %%%
 %%% @end
 %%%-------------------------------------------------------------------
--module(leta_books).
+-module(letdb_books).
 
 -behaviour(gen_server).
 
@@ -88,10 +88,10 @@ create(0, _, _) -> [];
 create(N, MaxWords, BooksDir) ->
   Parent = self(),
   BookWords = MaxWords div N,
-  BookName = integer_to_list(N) ++ leta_book_gen:word(12),
+  BookName = integer_to_list(N) ++ letdb_book_gen:word(12),
   BookPath = mk_path(BooksDir, BookName),
   spawn(fun() ->
-            Book = leta_book_gen:book(?CHAPTERS, BookWords div ?CHAPTERS),
+            Book = letdb_book_gen:book(?CHAPTERS, BookWords div ?CHAPTERS),
             BookCompressed = compress(Book),
             ok = file:write_file(BookPath, BookCompressed),
             Parent ! done

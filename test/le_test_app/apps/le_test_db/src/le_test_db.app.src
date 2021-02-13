@@ -1,14 +1,11 @@
-{application, le_test_app,
+{application, le_test_db,
  [{description, "An OTP application"},
   {vsn, "0.1.0"},
   {registered, []},
-  {mod, {leta_app, []}},
+  {mod, {letdb_app, []}},
   {applications,
    [kernel,
-    stdlib,
-    cowboy,
-    jsone,
-    le_test_db
+    stdlib
    ]},
   {env,[]},
   {modules, []},

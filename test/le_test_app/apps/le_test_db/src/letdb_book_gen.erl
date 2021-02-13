@@ -1,4 +1,4 @@
--module(leta_book_gen).
+-module(letdb_book_gen).
 
 -export([word/1, words/2, words_to_binary/1, book/2]).
 

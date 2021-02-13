@@ -1,13 +1,15 @@
 %%%-------------------------------------------------------------------
-%% @doc le_test_app top level supervisor.
+%% @doc le_test_db top level supervisor.
 %% @end
 %%%-------------------------------------------------------------------
 
--module(leta_sup).
+-module(letdb_sup).
 
 -behaviour(supervisor).
 
--export([start_link/0, init/1]).
+-export([start_link/0]).
+
+-export([init/1]).
 
 -define(SERVER, ?MODULE).
 
@@ -25,7 +27,9 @@ start_link() ->
 %%                  modules => modules()}   % optional
 init([]) ->
   SupFlags = #{strategy => one_for_all,
-               intensity => 0,
-               period => 1},
-  ChildSpecs = [],
+               intensity => 10,
+               period => 5},
+  ChildSpecs = [#{id => leta_books_server,
+                  start => {letdb_books, start_link, []}
+                 }],
   {ok, {SupFlags, ChildSpecs}}.
