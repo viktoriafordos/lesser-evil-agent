@@ -27,6 +27,7 @@ start_cowboy() ->
     cowboy_router:compile(
       [ {'_',
          [ {"/hello-world", leta_hw_handler, []},
+           {"/books", leta_books_handler, []},
            {"/book/:id/chapter/:chapter_num", leta_chapter_handler, []},
            {"/book/:id", leta_book_handler, []}
          ]

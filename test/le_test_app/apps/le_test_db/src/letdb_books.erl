@@ -30,7 +30,7 @@ start_link() ->
 
 get_names() ->
   Books = gen_server:call(?SERVER, books),
-  [Name || #{book_name := Name} <- Books].
+  [list_to_binary(Name) || #{book_name := Name} <- Books].
 
 get_chapter(GivenId, ChapterNum) ->
   Fun = fun(BookText) ->
