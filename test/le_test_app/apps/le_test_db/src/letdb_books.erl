@@ -16,7 +16,7 @@
 -export([initial_state/0, compress/1, decompress/1]).
 
 -define(SERVER, ?MODULE).
--define(MAX_WORDS, 10000000).
+-define(MAX_WORDS, 1000000).
 -define(CHAPTERS, 10).
 
 -record(state, {books = []}).
@@ -94,8 +94,8 @@ create(N, MaxWords, BooksDir) ->
   BookPath = mk_path(BooksDir, BookName),
   spawn(fun() ->
             Book = letdb_book_gen:book(?CHAPTERS, BookWords div ?CHAPTERS),
-            BookCompressed = compress(Book),
-            ok = file:write_file(BookPath, BookCompressed),
+            %% BookCompressed = compress(Book),
+            ok = file:write_file(BookPath, Book),
             Parent ! done
         end),
   Books = [#{book_name => BookName, path => BookPath, id => N}
@@ -135,8 +135,8 @@ find_book_and_map(GivenId, Fun) ->
   case lists:filter(FilterFun, Books) of
     [] -> {error, not_found};
     [#{path := Path} | _] ->
-      {ok, Compressed} = file:read_file(Path),
-      BookText = decompress(Compressed),
-      ResText = Fun(BookText),
-      compress(ResText)
+      {ok, BookText} = file:read_file(Path),
+      %% BookText = decompress(Compressed),
+      _ResText = Fun(BookText)
+      %% compress(ResText)
   end.
