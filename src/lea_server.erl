@@ -21,7 +21,7 @@
 -record(state, {connected = false,
                 le_node = undefined,
                 le_cookie = fun()-> not_a_cookie end,
-                report_interval = 10000}).
+                report_interval = 1000}).
 
 %%%===================================================================
 %%% API
@@ -42,7 +42,7 @@ init([]) ->
   {ok, ServerCookie} = application:get_env(lesser_evil_agent, server_cookie),
   true = is_atom(ServerCookie),
   {ok, ReportInt} = application:get_env(lesser_evil_agent, report_interval),
-  true = (is_integer(ReportInt) andalso ReportInt > 10000),
+  true = is_integer(ReportInt),
 
   self() ! connect,
 
@@ -114,17 +114,30 @@ le_cast(Msg, #state{le_node = Node}) ->
   gen_server:cast({le_monitor_server, Node}, Msg).
 
 kill_pid(Pid) ->
+  MonRef = erlang:monitor(process, Pid),
   exit(Pid, killed_by_lesser_evil),
   receive
+    {'DOWN', Ref, _, _,noproc} ->
+      ok;
+    {'DOWN', Ref, _, _, _} ->
+      receive
+      after
+        3000 -> ok
+      end,
+      ok
   after
-    5000 -> ok
-  end,
+    0 ->
+      erlang:demonitor(MonRef, [flush]),
+      brutal_kill(Pid)
+  end.
+
+brutal_kill(Pid) ->
   case erlang:is_process_alive(Pid) of
     true ->
       exit(Pid, kill),
       receive
       after
-        5000 -> ok
+        3000 -> ok
       end;
     _ -> ok
   end.

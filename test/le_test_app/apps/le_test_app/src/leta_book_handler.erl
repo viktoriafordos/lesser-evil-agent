@@ -12,6 +12,7 @@ handle_path(Req0, _, Opts) ->
   BookId = binary_to_integer(BookIdBin),
   Name = letdb_book_gen:word(10),
   CompressedBook = letdb_books:get_watermarked(BookId, Name),
+  timer:sleep(2000),
   Req = cowboy_req:reply(200,
                          #{<<"content-type">> => <<"application/octet-stream">>},
                          CompressedBook,

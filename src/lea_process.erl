@@ -30,11 +30,11 @@ maybe_process_info({group_leader, GLPid}, Pid, GroupLeadersApp) ->
     %% Top level supervisor should never be killed
     {ok, {_App, Pid}} -> false;
     {ok, App} ->
-      case erlang:process_info(Pid, [initial_call |?BASE_KEYS]) of
+      case erlang:process_info(Pid, [initial_call, dictionary |?BASE_KEYS]) of
         %% 'Process X' should never be killed
         [{initial_call, {application_master, _, _}} |_] -> false;
-        [{initial_call, _} | PI] ->
-          case lists:member(GLPid, proplists:get_value(links, PI, [])) of
+        [{initial_call, _}, {dictionary, Dict} | PI] ->
+          case is_supervisor(Dict) orelse is_linked_to_gl(PI, GLPid) of
             true -> false;
             false -> {true, create_proc_data(Pid, App, PI)}
           end;
@@ -43,6 +43,15 @@ maybe_process_info({group_leader, GLPid}, Pid, GroupLeadersApp) ->
     error ->
       false
   end.
+
+is_supervisor(Dict) ->
+  case lists:keyfind('$initial_call', 1, Dict) of
+    {'$initial_call', {supervisor, _, _}} -> true;
+    _ -> false
+  end.
+
+is_linked_to_gl(PI, GLPid) ->
+  lists:member(GLPid, proplists:get_value(links, PI, [])).
 
 create_proc_data(Pid, App, PI) ->
   M = maps:from_list(PI),
