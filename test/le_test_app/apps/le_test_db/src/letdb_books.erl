@@ -7,7 +7,8 @@
 -behaviour(gen_server).
 
 %% API
--export([start_link/0, get_names/0, get_watermarked/2, get_chapter/2]).
+-export([start_link/0, get_names/0, get_book/1,
+         get_watermarked/2, get_chapter/2]).
 
 %% gen_server callbacks
 -export([init/1, handle_call/3, handle_cast/2]).
@@ -31,6 +32,9 @@ start_link() ->
 get_names() ->
   Books = gen_server:call(?SERVER, books),
   [list_to_binary(Name) || #{book_name := Name} <- Books].
+
+get_book(GivenId) ->
+  find_book_and_map(GivenId, fun(A) -> A end).
 
 get_chapter(GivenId, ChapterNum) ->
   Fun = fun(BookText) ->

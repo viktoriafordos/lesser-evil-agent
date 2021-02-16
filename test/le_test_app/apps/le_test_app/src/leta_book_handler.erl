@@ -10,12 +10,10 @@ init(Req, Opts) ->
 handle_path(Req0, _, Opts) ->
   BookIdBin = cowboy_req:binding(id, Req0),
   BookId = binary_to_integer(BookIdBin),
-  Name = letdb_book_gen:word(10),
-  CompressedBook = letdb_books:get_watermarked(BookId, Name),
-  timer:sleep(2000),
+  Book = letdb_cache:get_content(BookId),
   Req = cowboy_req:reply(200,
                          #{<<"content-type">> => <<"application/octet-stream">>},
-                         CompressedBook,
+                         Book,
                          Req0),
   {ok, Req, Opts}.
 

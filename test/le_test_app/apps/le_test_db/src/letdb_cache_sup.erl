@@ -1,13 +1,13 @@
 %%%-------------------------------------------------------------------
-%% @doc le_test_db top level supervisor.
+%% @doc db cache supervisor.
 %% @end
 %%%-------------------------------------------------------------------
 
--module(letdb_sup).
+-module(letdb_cache_sup).
 
 -behaviour(supervisor).
 
--export([start_link/0]).
+-export([start_link/0, get_cache/1]).
 
 -export([init/1]).
 
@@ -26,14 +26,28 @@ start_link() ->
 %%                  type => worker(),       % optional
 %%                  modules => modules()}   % optional
 init([]) ->
-  SupFlags = #{strategy => one_for_all,
+  SupFlags = #{strategy => one_for_one,
                intensity => 10,
                period => 5},
-  ChildSpecs = [#{id => letdb_books_server,
-                  start => {letdb_books, start_link, []}
-                 },
-                #{id => letdb_cache_sup,
-                  start => {letdb_cache_sup, start_link, []},
-                  type => supervisor
-                 }],
+  ChildSpecs = [],
   {ok, {SupFlags, ChildSpecs}}.
+
+get_cache(Name) ->
+    case [Child || {Id, Child, _, _} <- supervisor:which_children(?SERVER),
+                                        Id =:= Name,
+                                        is_pid(Child)] of
+        [NodeHandlerPid] -> {ok, NodeHandlerPid};
+        [] -> add_child(Name)
+    end.
+
+add_child(Name) ->
+  Res = supervisor:start_child(?SERVER, #{id => Name,
+                                          start => {letdb_cache, start_link, [Name]},
+                                          type => worker,
+                                          restart => temporary
+                                         }),
+  case Res of
+    {ok, Pid} -> {ok, Pid};
+    {error, {already_started, Pid}} -> {ok, Pid};
+    Other -> Other
+  end.

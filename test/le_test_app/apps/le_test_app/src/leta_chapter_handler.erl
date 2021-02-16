@@ -12,11 +12,10 @@ handle_path(Req0, _, Opts) ->
   BookId = binary_to_integer(BookIdBin),
   ChapterNumberBin = cowboy_req:binding(chapter_num, Req0),
   ChapterNumber = binary_to_integer(ChapterNumberBin),
-  CompressedChapter = letdb_books:get_chapter(BookId, ChapterNumber),
-  timer:sleep(1500),
+  Chapter = letdb_cache:get_content({BookId, ChapterNumber}),
   Req = cowboy_req:reply(200,
                          #{<<"content-type">> => <<"application/octet-stream">>},
-                         CompressedChapter,
+                         Chapter,
                          Req0),
   {ok, Req, Opts}.
 
