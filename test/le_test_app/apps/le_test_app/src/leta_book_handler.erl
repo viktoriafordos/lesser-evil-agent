@@ -11,6 +11,7 @@ handle_path(Req0, _, Opts) ->
   BookIdBin = cowboy_req:binding(id, Req0),
   BookId = binary_to_integer(BookIdBin),
   Book = letdb_cache:get_content(BookId),
+  true = is_binary(Book),
   Req = cowboy_req:reply(200,
                          #{<<"content-type">> => <<"application/octet-stream">>},
                          Book,

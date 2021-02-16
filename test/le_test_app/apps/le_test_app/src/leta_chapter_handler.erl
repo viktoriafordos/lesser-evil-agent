@@ -13,6 +13,7 @@ handle_path(Req0, _, Opts) ->
   ChapterNumberBin = cowboy_req:binding(chapter_num, Req0),
   ChapterNumber = binary_to_integer(ChapterNumberBin),
   Chapter = letdb_cache:get_content({BookId, ChapterNumber}),
+  true = is_binary(Chapter),
   Req = cowboy_req:reply(200,
                          #{<<"content-type">> => <<"application/octet-stream">>},
                          Chapter,

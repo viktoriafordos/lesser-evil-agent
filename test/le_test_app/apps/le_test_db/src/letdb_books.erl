@@ -18,7 +18,7 @@
 
 -define(SERVER, ?MODULE).
 -define(MAX_WORDS, 1000000).
--define(CHAPTERS, 10).
+-define(CHAPTERS, 20).
 
 -record(state, {books = []}).
 
@@ -80,7 +80,7 @@ initial_state() ->
     case file:list_dir(books_dir()) of
       {error, enoent} ->
         ok = file:make_dir(BooksDir),
-        create(5, ?MAX_WORDS, BooksDir);
+        create(100, ?MAX_WORDS, BooksDir);
       {ok, BookFileNames} ->
         load(BookFileNames, BooksDir)
     end,
@@ -94,7 +94,7 @@ create(0, _, _) -> [];
 create(N, MaxWords, BooksDir) ->
   Parent = self(),
   BookWords = MaxWords div N,
-  BookName = integer_to_list(N) ++ letdb_book_gen:word(12),
+  BookName = integer_to_list(N) ++ "_" ++ letdb_book_gen:word(12),
   BookPath = mk_path(BooksDir, BookName),
   spawn(fun() ->
             Book = letdb_book_gen:book(?CHAPTERS, BookWords div ?CHAPTERS),
@@ -109,9 +109,11 @@ create(N, MaxWords, BooksDir) ->
 
 
 load(BookFileNames, BooksDir) ->
-  [#{book_name => BookName, path => mk_path(BooksDir, BookName),
-     id => list_to_integer([Id])}
-   || [Id | _] = BookName <- BookFileNames].
+  [begin
+    [Id, _] = string:split(BookName, "_"),
+      #{book_name => BookName, path => mk_path(BooksDir, BookName),
+      id => list_to_integer(Id)}
+   end || BookName <- BookFileNames].
 
 mk_path(Path, FileName) ->
   Path ++ "/" ++ FileName.
