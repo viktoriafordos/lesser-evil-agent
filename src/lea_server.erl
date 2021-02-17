@@ -126,7 +126,7 @@ kill_pid(Pid) ->
       end,
       ok
   after
-    0 ->
+    1 ->
       erlang:demonitor(MonRef, [flush]),
       brutal_kill(Pid)
   end.
