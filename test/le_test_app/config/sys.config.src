@@ -3,7 +3,7 @@
    {http_port, 8888}]},
   {lesser_evil_agent,
    [{server_cookie, super_secret_cookie},
-    {server_host, 'lesser_evil@${HOST}'},
+    {server_host, 'lesser_evil@${HOSTNAME}'},
     {applications, [le_test_app, le_test_db]},
     {report_interval, 1000}]}
 ].
