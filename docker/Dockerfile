@@ -32,6 +32,7 @@ RUN chmod +x /start.sh
 
 COPY --from=0 /buildroot/lesser_evil/mem2.sh /mem.sh
 RUN chmod +x /mem.sh
+RUN mkdir /measurements
 
 COPY --from=0 /buildroot/lesser_evil_agent/test/le_test_app/_build/prod/rel/le_test_app /le_test_app
 COPY --from=0 /buildroot/lesser_evil/_build/prod/rel/lesser_evil /lesser_evil
