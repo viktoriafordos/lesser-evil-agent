@@ -1,4 +1,4 @@
-{mode, {rate, 2}}.
+{mode,{rate, 30}}.
 
 {duration, 10}.
 
