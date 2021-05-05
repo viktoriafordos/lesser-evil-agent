@@ -29,6 +29,7 @@ start_cowboy() ->
          [ {"/hello-world", leta_hw_handler, []},
            {"/books", leta_books_handler, []},
            {"/book/:id/chapter/:chapter_num", leta_chapter_handler, []},
+           {"/book-validation/:size", leta_validation_handler, []},
            {"/book/:id", leta_book_handler, []}
          ]
         }
