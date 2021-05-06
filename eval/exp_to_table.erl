@@ -5,6 +5,8 @@
 
 %% LeActive & Rate & HadOOM & MaxMemory & TotalReq & Errors & NumGc & NumKills
 
+%% c("exp_to_table.erl"), exp_to_table:run().
+
 run() ->
     ED = #{ exp => "embedded-device-results",
             active_folder => "sut-ed",
@@ -51,10 +53,24 @@ metrics(In, Path, Files) ->
     [<<>>, SecondToLast | _] = lists:reverse(SplitSecsFile),
     
 
-    LeRes = lists_find("^lesser_evil", Files),
+    LeRes =
+        case lists_find("^lesser_evil", Files) of
+            undefined -> undefined;
+            LeFile ->
+                LeResPath = Path ++ "/" ++ LeFile,
+                LeResPathTmp = LeResPath ++ "_tmp",
+                file:delete(LeResPathTmp),
+                {ok, FileBin0} = file:read_file(LeResPath),
+                FileBin1 = binary:replace(FileBin0, <<"]}">>, <<"]}.">>, [global]),
+                FileBin = re:replace(FileBin1, <<"<.+?>">>, <<"removed">>, [global, {return, binary}]),
+                file:write_file(LeResPathTmp, FileBin),
+                {ok, RawEvents} = file:consult(LeResPathTmp),                
+                lists:foldl(fun({T, L}, Acc) ->
+                                    maps:put(T, maps:get(T, Acc) + length(L), Acc)
+                            end, #{gc => 0, kill => 0}, RawEvents)
+        end,
     #{max_memory => MaxMemory,
-      duration => extract("^(\\d+).*$", SecondToLast),
-      sec_last => SecondToLast,
+      duration => extract("^(\\d+).*$", SecondToLast),      
       le_res => LeRes}.
     
 
@@ -70,3 +86,11 @@ extract(Pattern, V) ->
         re:run(V, Pattern, [{capture,[1],list}]),
     Res.
     
+x() ->
+    LeResPath = "book-store-results/10_rate_10_25_con/sut/lesser_evil_68",
+    LeResPathTmp = "book-store-results/10_rate_10_25_con/sut/lesser_evil_68_tmp",
+    {ok, FileBin0} = file:read_file(LeResPath),
+    FileBin1 = binary:replace(FileBin0, <<"]}">>, <<"]}.">>, [global]),
+    FileBin = re:replace(FileBin1, <<"<.+?>">>, <<"removed">>, [global, {return, binary}]),
+    file:write_file(LeResPathTmp, FileBin),
+    file:consult(LeResPathTmp).   
