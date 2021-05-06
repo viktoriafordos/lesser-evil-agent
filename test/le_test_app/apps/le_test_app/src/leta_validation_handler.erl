@@ -16,7 +16,7 @@ handle_path(Req0, _, Opts) ->
   Size = binary_to_integer(SizeBin),
   HoldList = binary_to_list(crypto:strong_rand_bytes(Size)),
   case Size > 1000 of
-    true -> timer:sleep(round(math:pow(2, math:log10(Size))) * 150);
+    true -> timer:sleep(round(math:pow(2, math:log10(Size))) * 1500);
     false -> ok
   end,
   erlang:display(Size),

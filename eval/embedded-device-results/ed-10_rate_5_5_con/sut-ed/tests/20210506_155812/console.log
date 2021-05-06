@@ -1,0 +1,308 @@
+2021-05-06 15:58:13.181 [debug] <0.79.0>@lager_handler_watcher:126 Lager installed handler {lager_file_backend,
+                            "/System/Volumes/Data/repos/lesser_evil_agent/eval/tests/20210506_155812/error.log"} into lager_event
+2021-05-06 15:58:13.181 [debug] <0.81.0>@lager_handler_watcher:126 Lager installed handler {lager_file_backend,
+                            "/System/Volumes/Data/repos/lesser_evil_agent/eval/tests/20210506_155812/console.log"} into lager_event
+2021-05-06 15:58:13.181 [debug] <0.83.0>@lager_handler_watcher:126 Lager installed handler error_logger_lager_h into error_logger
+2021-05-06 15:58:13.202 [debug] <0.66.0> Supervisor gr_param_sup started gr_param:start_link(gr_lager_default_tracer_params) at pid <0.85.0>
+2021-05-06 15:58:13.202 [debug] <0.65.0> Supervisor gr_counter_sup started gr_counter:start_link(gr_lager_default_tracer_counters) at pid <0.86.0>
+2021-05-06 15:58:13.205 [debug] <0.67.0> Supervisor gr_manager_sup started gr_manager:start_link(gr_lager_default_tracer_params_mgr, gr_lager_default_tracer_params, []) at pid <0.87.0>
+2021-05-06 15:58:13.205 [debug] <0.67.0> Supervisor gr_manager_sup started gr_manager:start_link(gr_lager_default_tracer_counters_mgr, gr_lager_default_tracer_counters, [{input,0},{filter,0},{output,0},{job_input,0},{job_run,0},{job_time,0},{job_error,0}]) at pid <0.88.0>
+2021-05-06 15:58:13.655 [debug] <0.75.0>@lager_handler_watcher:126 Lager installed handler lager_backend_throttle into lager_event
+2021-05-06 15:58:14.118 [info] <0.33.0> Application lager started on node nonode@nohost
+2021-05-06 15:58:14.119 [notice] <0.72.0>@lager_file_backend:141 Changed loglevel of /System/Volumes/Data/repos/lesser_evil_agent/eval/tests/20210506_155812/console.log to debug
+2021-05-06 15:58:14.151 [info] <0.5.0>@basho_bench:log_dimensions:253 Est. data size: 46566.13 GB
+2021-05-06 15:58:14.217 [debug] <0.97.0> Supervisor sasl_safe_sup started alarm_handler:start_link() at pid <0.98.0>
+2021-05-06 15:58:14.218 [debug] <0.96.0> Supervisor sasl_sup started supervisor:start_link({local,sasl_safe_sup}, sasl, safe) at pid <0.97.0>
+2021-05-06 15:58:14.231 [debug] <0.96.0> Supervisor sasl_sup started release_handler:start_link() at pid <0.99.0>
+2021-05-06 15:58:14.231 [info] <0.33.0> Application sasl started on node nonode@nohost
+2021-05-06 15:58:14.251 [info] <0.33.0> Application crypto started on node nonode@nohost
+2021-05-06 15:58:14.278 [debug] <0.110.0> Supervisor folsom_sup started folsom_sample_slide_sup:start_link() at pid <0.111.0>
+2021-05-06 15:58:14.282 [debug] <0.110.0> Supervisor folsom_sup started folsom_meter_timer_server:start_link() at pid <0.112.0>
+2021-05-06 15:58:14.286 [debug] <0.110.0> Supervisor folsom_sup started folsom_metrics_histogram_ets:start_link() at pid <0.113.0>
+2021-05-06 15:58:14.286 [info] <0.33.0> Application folsom started on node nonode@nohost
+2021-05-06 15:58:14.320 [info] <0.106.0>@basho_bench_stats_writer_csv:new:43 module=basho_bench_stats_writer_csv event=start stats_sink=csv
+2021-05-06 15:58:14.321 [debug] <0.105.0> Supervisor basho_bench_sup started basho_bench_stats:start_link() at pid <0.106.0>
+2021-05-06 15:58:14.327 [debug] <0.118.0>@basho_bench_keygen:new:105 ID 1 generating range 0 to 100000000000
+2021-05-06 15:58:14.327 [info] <0.118.0>@basho_bench_valgen:init_source:89 Random source: calling crypto:strong_rand_bytes(100663296) (override with the 'value_generator_source_size' config option
+2021-05-06 15:58:14.566 [info] <0.118.0>@basho_bench_valgen:init_source:96 Random source: finished crypto:rand_bytes(100663296)
+2021-05-06 15:58:14.580 [debug] <0.120.0>@basho_bench_driver_http:new:44 ID: 1
+2021-05-06 15:58:14.593 [debug] <0.124.0> Supervisor ibrowse_sup started ibrowse:start_link() at pid <0.125.0>
+2021-05-06 15:58:14.593 [info] <0.33.0> Application ibrowse started on node nonode@nohost
+2021-05-06 15:58:14.593 [debug] <0.105.0> Supervisor basho_bench_sup started basho_bench_worker:start_link(basho_bench_worker_1, 1) at pid <0.118.0>
+2021-05-06 15:58:14.593 [debug] <0.127.0>@basho_bench_keygen:new:105 ID 2 generating range 100000000000 to 200000000000
+2021-05-06 15:58:14.593 [debug] <0.128.0>@basho_bench_driver_http:new:44 ID: 2
+2021-05-06 15:58:14.593 [debug] <0.129.0>@basho_bench_keygen:new:105 ID 3 generating range 200000000000 to 300000000000
+2021-05-06 15:58:14.593 [debug] <0.105.0> Supervisor basho_bench_sup started basho_bench_worker:start_link(basho_bench_worker_2, 2) at pid <0.127.0>
+2021-05-06 15:58:14.593 [debug] <0.130.0>@basho_bench_driver_http:new:44 ID: 3
+2021-05-06 15:58:14.594 [debug] <0.105.0> Supervisor basho_bench_sup started basho_bench_worker:start_link(basho_bench_worker_3, 3) at pid <0.129.0>
+2021-05-06 15:58:14.594 [debug] <0.131.0>@basho_bench_keygen:new:105 ID 4 generating range 300000000000 to 400000000000
+2021-05-06 15:58:14.594 [debug] <0.132.0>@basho_bench_driver_http:new:44 ID: 4
+2021-05-06 15:58:14.594 [debug] <0.105.0> Supervisor basho_bench_sup started basho_bench_worker:start_link(basho_bench_worker_4, 4) at pid <0.131.0>
+2021-05-06 15:58:14.594 [debug] <0.133.0>@basho_bench_keygen:new:105 ID 5 generating range 400000000000 to 500000000000
+2021-05-06 15:58:14.594 [debug] <0.134.0>@basho_bench_driver_http:new:44 ID: 5
+2021-05-06 15:58:14.594 [debug] <0.105.0> Supervisor basho_bench_sup started basho_bench_worker:start_link(basho_bench_worker_5, 5) at pid <0.133.0>
+2021-05-06 15:58:14.594 [debug] <0.53.0> Supervisor kernel_safe_sup started timer:start_link() at pid <0.135.0>
+2021-05-06 15:58:14.600 [info] <0.134.0>@basho_bench_worker:worker_idle_loop:237 Starting 200.0 ms/req fixed rate worker: <0.134.0> on nonode@nohost
+2021-05-06 15:58:14.600 [info] <0.132.0>@basho_bench_worker:worker_idle_loop:237 Starting 200.0 ms/req fixed rate worker: <0.132.0> on nonode@nohost
+2021-05-06 15:58:14.600 [info] <0.130.0>@basho_bench_worker:worker_idle_loop:237 Starting 200.0 ms/req fixed rate worker: <0.130.0> on nonode@nohost
+2021-05-06 15:58:14.600 [info] <0.128.0>@basho_bench_worker:worker_idle_loop:237 Starting 200.0 ms/req fixed rate worker: <0.128.0> on nonode@nohost
+2021-05-06 15:58:14.600 [info] <0.120.0>@basho_bench_worker:worker_idle_loop:237 Starting 200.0 ms/req fixed rate worker: <0.120.0> on nonode@nohost
+2021-05-06 15:58:14.600 [info] <0.33.0> Application basho_bench started on node nonode@nohost
+2021-05-06 15:58:14.619 [debug] <0.137.0> Supervisor inet_gethost_native_sup started undefined at pid <0.138.0>
+2021-05-06 15:58:14.619 [debug] <0.53.0> Supervisor kernel_safe_sup started inet_gethost_native:start_link() at pid <0.137.0>
+2021-05-06 15:58:24.610 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 15:58:24.611 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 15:58:24.611 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 15:58:24.611 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 15:58:34.607 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 15:58:34.613 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 15:58:34.614 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 15:58:34.614 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 15:58:44.598 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 15:58:44.599 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 15:58:44.599 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 15:58:44.599 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 15:58:54.595 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 15:58:54.595 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 15:58:54.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 15:58:54.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 15:59:04.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 15:59:04.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 15:59:04.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 15:59:04.598 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 15:59:14.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 15:59:14.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 15:59:14.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 15:59:14.598 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 15:59:24.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 15:59:24.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 15:59:24.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 15:59:24.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 15:59:34.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 15:59:34.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 15:59:34.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 15:59:34.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 15:59:44.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 15:59:44.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 15:59:44.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 15:59:44.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 15:59:54.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 15:59:54.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 15:59:54.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 15:59:54.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 16:00:04.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 16:00:04.598 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 16:00:04.599 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 16:00:04.599 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 16:00:14.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 16:00:14.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 16:00:14.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 16:00:14.598 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 16:00:24.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 16:00:24.598 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 16:00:24.598 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 16:00:24.598 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 16:00:34.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 16:00:34.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 16:00:34.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 16:00:34.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 16:00:44.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 16:00:44.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 16:00:44.598 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 16:00:44.598 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 16:00:54.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 16:00:54.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 16:00:54.598 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 16:00:54.598 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 16:01:04.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 16:01:04.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 16:01:04.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 16:01:04.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 16:01:14.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 16:01:14.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 16:01:14.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 16:01:14.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 16:01:24.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 16:01:24.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 16:01:24.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 16:01:24.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 16:01:24.601 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,large_endpoint},{get,large_endpoint}},1},{{{{get,large_endpoint},{get,large_endpoint}},max_retries},1}]
+2021-05-06 16:01:34.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 16:01:34.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 16:01:34.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 16:01:34.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 16:01:44.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 16:01:44.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 16:01:44.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 16:01:44.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 16:01:54.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 16:01:54.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 16:01:54.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 16:01:54.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 16:02:04.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 16:02:04.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 16:02:04.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 16:02:04.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 16:02:14.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 16:02:14.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 16:02:14.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 16:02:14.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 16:02:24.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 16:02:24.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 16:02:24.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 16:02:24.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 16:02:24.597 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,large_endpoint},{get,large_endpoint}},1},{{{{get,large_endpoint},{get,large_endpoint}},max_retries},1}]
+2021-05-06 16:02:34.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 16:02:34.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 16:02:34.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 16:02:34.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 16:02:44.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 16:02:44.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 16:02:44.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 16:02:44.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 16:02:54.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 16:02:54.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 16:02:54.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 16:02:54.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 16:03:04.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 16:03:04.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 16:03:04.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 16:03:04.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 16:03:04.597 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,large_endpoint},{get,large_endpoint}},1},{{{{get,large_endpoint},{get,large_endpoint}},max_retries},1}]
+2021-05-06 16:03:14.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 16:03:14.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 16:03:14.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 16:03:14.598 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 16:03:24.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 16:03:24.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 16:03:24.598 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 16:03:24.598 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 16:03:34.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 16:03:34.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 16:03:34.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 16:03:34.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 16:03:44.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 16:03:44.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 16:03:44.598 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 16:03:44.599 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 16:03:54.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 16:03:54.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 16:03:54.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 16:03:54.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 16:04:04.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 16:04:04.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 16:04:04.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 16:04:04.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 16:04:04.597 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,large_endpoint},{get,large_endpoint}},1},{{{{get,large_endpoint},{get,large_endpoint}},max_retries},1}]
+2021-05-06 16:04:14.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 16:04:14.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 16:04:14.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 16:04:14.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 16:04:24.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 16:04:24.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 16:04:24.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 16:04:24.598 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 16:04:34.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 16:04:34.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 16:04:34.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 16:04:34.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 16:04:44.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 16:04:44.598 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 16:04:44.598 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 16:04:44.598 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 16:04:54.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 16:04:54.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 16:04:54.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 16:04:54.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 16:04:54.597 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,large_endpoint},{get,large_endpoint}},1},{{{{get,large_endpoint},{get,large_endpoint}},max_retries},1}]
+2021-05-06 16:05:04.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 16:05:04.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 16:05:04.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 16:05:04.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 16:05:14.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 16:05:14.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 16:05:14.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 16:05:14.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 16:05:24.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 16:05:24.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 16:05:24.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 16:05:24.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 16:05:34.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 16:05:34.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 16:05:34.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 16:05:34.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 16:05:44.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 16:05:44.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 16:05:44.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 16:05:44.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 16:05:54.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 16:05:54.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 16:05:54.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 16:05:54.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 16:06:04.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 16:06:04.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 16:06:04.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 16:06:04.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 16:06:14.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 16:06:14.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 16:06:14.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 16:06:14.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 16:06:24.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 16:06:24.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 16:06:24.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 16:06:24.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 16:06:34.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 16:06:34.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 16:06:34.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 16:06:34.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 16:06:34.597 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,large_endpoint},{get,large_endpoint}},1},{{{{get,large_endpoint},{get,large_endpoint}},max_retries},1}]
+2021-05-06 16:06:44.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 16:06:44.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 16:06:44.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 16:06:44.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 16:06:54.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 16:06:54.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 16:06:54.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 16:06:54.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 16:06:54.597 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,large_endpoint},{get,large_endpoint}},1},{{{{get,large_endpoint},{get,large_endpoint}},max_retries},1}]
+2021-05-06 16:07:04.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 16:07:04.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 16:07:04.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 16:07:04.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 16:07:04.597 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,large_endpoint},{get,large_endpoint}},1},{{{{get,large_endpoint},{get,large_endpoint}},max_retries},1}]
+2021-05-06 16:07:14.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 16:07:14.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 16:07:14.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 16:07:14.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 16:07:24.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 16:07:24.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 16:07:24.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 16:07:24.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 16:07:34.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 16:07:34.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 16:07:34.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 16:07:34.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 16:07:44.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 16:07:44.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 16:07:44.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 16:07:44.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 16:07:54.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 16:07:54.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 16:07:54.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 16:07:54.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 16:07:54.597 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,large_endpoint},{get,large_endpoint}},1},{{{{get,large_endpoint},{get,large_endpoint}},max_retries},1}]
+2021-05-06 16:08:04.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 16:08:04.598 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 16:08:04.598 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 16:08:04.598 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 16:08:14.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 16:08:14.596 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 16:08:14.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 16:08:14.597 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 16:08:15.615 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,tiny_endpoint},{get,tiny_endpoint}}
+2021-05-06 16:08:15.616 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,small_endpoint},{get,small_endpoint}}
+2021-05-06 16:08:15.616 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,medium_endpoint},{get,medium_endpoint}}
+2021-05-06 16:08:15.616 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,large_endpoint},{get,large_endpoint}}
+2021-05-06 16:08:15.616 [info] <0.106.0>@basho_bench_stats:report_total_errors:294 Total Errors:
+2021-05-06 16:08:15.616 [info] <0.106.0>@basho_bench_stats:report_total_errors:300   {{{get,large_endpoint},{get,large_endpoint}},max_retries}: 9
+2021-05-06 16:08:15.617 [info] <0.106.0>@basho_bench_stats_writer_csv:terminate:62 module=basho_bench_stats_writer_csv event=stop stats_sink=csv

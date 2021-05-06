@@ -1,0 +1,353 @@
+2021-05-06 12:49:50.329 [debug] <0.79.0>@lager_handler_watcher:126 Lager installed handler {lager_file_backend,
+                            "/System/Volumes/Data/repos/lesser_evil_agent/eval/tests/20210506_124949/error.log"} into lager_event
+2021-05-06 12:49:50.329 [debug] <0.81.0>@lager_handler_watcher:126 Lager installed handler {lager_file_backend,
+                            "/System/Volumes/Data/repos/lesser_evil_agent/eval/tests/20210506_124949/console.log"} into lager_event
+2021-05-06 12:49:50.329 [debug] <0.83.0>@lager_handler_watcher:126 Lager installed handler error_logger_lager_h into error_logger
+2021-05-06 12:49:50.353 [debug] <0.66.0> Supervisor gr_param_sup started gr_param:start_link(gr_lager_default_tracer_params) at pid <0.85.0>
+2021-05-06 12:49:50.353 [debug] <0.65.0> Supervisor gr_counter_sup started gr_counter:start_link(gr_lager_default_tracer_counters) at pid <0.86.0>
+2021-05-06 12:49:50.358 [debug] <0.67.0> Supervisor gr_manager_sup started gr_manager:start_link(gr_lager_default_tracer_params_mgr, gr_lager_default_tracer_params, []) at pid <0.87.0>
+2021-05-06 12:49:50.358 [debug] <0.67.0> Supervisor gr_manager_sup started gr_manager:start_link(gr_lager_default_tracer_counters_mgr, gr_lager_default_tracer_counters, [{input,0},{filter,0},{output,0},{job_input,0},{job_run,0},{job_time,0},{job_error,0}]) at pid <0.88.0>
+2021-05-06 12:49:50.792 [debug] <0.75.0>@lager_handler_watcher:126 Lager installed handler lager_backend_throttle into lager_event
+2021-05-06 12:49:51.310 [info] <0.33.0> Application lager started on node nonode@nohost
+2021-05-06 12:49:51.311 [notice] <0.72.0>@lager_file_backend:141 Changed loglevel of /System/Volumes/Data/repos/lesser_evil_agent/eval/tests/20210506_124949/console.log to debug
+2021-05-06 12:49:51.345 [info] <0.5.0>@basho_bench:log_dimensions:253 Est. data size: 4.77 MB
+2021-05-06 12:49:51.426 [debug] <0.97.0> Supervisor sasl_safe_sup started alarm_handler:start_link() at pid <0.98.0>
+2021-05-06 12:49:51.426 [debug] <0.96.0> Supervisor sasl_sup started supervisor:start_link({local,sasl_safe_sup}, sasl, safe) at pid <0.97.0>
+2021-05-06 12:49:51.442 [debug] <0.96.0> Supervisor sasl_sup started release_handler:start_link() at pid <0.99.0>
+2021-05-06 12:49:51.442 [info] <0.33.0> Application sasl started on node nonode@nohost
+2021-05-06 12:49:51.469 [info] <0.33.0> Application crypto started on node nonode@nohost
+2021-05-06 12:49:51.505 [debug] <0.110.0> Supervisor folsom_sup started folsom_sample_slide_sup:start_link() at pid <0.111.0>
+2021-05-06 12:49:51.511 [debug] <0.110.0> Supervisor folsom_sup started folsom_meter_timer_server:start_link() at pid <0.112.0>
+2021-05-06 12:49:51.516 [debug] <0.110.0> Supervisor folsom_sup started folsom_metrics_histogram_ets:start_link() at pid <0.113.0>
+2021-05-06 12:49:51.516 [info] <0.33.0> Application folsom started on node nonode@nohost
+2021-05-06 12:49:51.560 [info] <0.106.0>@basho_bench_stats_writer_csv:new:43 module=basho_bench_stats_writer_csv event=start stats_sink=csv
+2021-05-06 12:49:51.562 [debug] <0.105.0> Supervisor basho_bench_sup started basho_bench_stats:start_link() at pid <0.106.0>
+2021-05-06 12:49:51.569 [debug] <0.117.0>@basho_bench_keygen:new:105 ID 1 generating range 0 to 2000
+2021-05-06 12:49:51.569 [info] <0.117.0>@basho_bench_valgen:init_source:89 Random source: calling crypto:strong_rand_bytes(100663296) (override with the 'value_generator_source_size' config option
+2021-05-06 12:49:51.827 [info] <0.117.0>@basho_bench_valgen:init_source:96 Random source: finished crypto:rand_bytes(100663296)
+2021-05-06 12:49:51.844 [debug] <0.119.0>@basho_bench_driver_http:new:44 ID: 1
+2021-05-06 12:49:51.855 [debug] <0.123.0> Supervisor ibrowse_sup started ibrowse:start_link() at pid <0.124.0>
+2021-05-06 12:49:51.855 [info] <0.33.0> Application ibrowse started on node nonode@nohost
+2021-05-06 12:49:51.855 [debug] <0.105.0> Supervisor basho_bench_sup started basho_bench_worker:start_link(basho_bench_worker_1, 1) at pid <0.117.0>
+2021-05-06 12:49:51.855 [debug] <0.126.0>@basho_bench_keygen:new:105 ID 2 generating range 2000 to 4000
+2021-05-06 12:49:51.855 [debug] <0.127.0>@basho_bench_driver_http:new:44 ID: 2
+2021-05-06 12:49:51.856 [debug] <0.128.0>@basho_bench_keygen:new:105 ID 3 generating range 4000 to 6000
+2021-05-06 12:49:51.856 [debug] <0.105.0> Supervisor basho_bench_sup started basho_bench_worker:start_link(basho_bench_worker_2, 2) at pid <0.126.0>
+2021-05-06 12:49:51.856 [debug] <0.129.0>@basho_bench_driver_http:new:44 ID: 3
+2021-05-06 12:49:51.856 [debug] <0.105.0> Supervisor basho_bench_sup started basho_bench_worker:start_link(basho_bench_worker_3, 3) at pid <0.128.0>
+2021-05-06 12:49:51.856 [debug] <0.130.0>@basho_bench_keygen:new:105 ID 4 generating range 6000 to 8000
+2021-05-06 12:49:51.856 [debug] <0.131.0>@basho_bench_driver_http:new:44 ID: 4
+2021-05-06 12:49:51.856 [debug] <0.105.0> Supervisor basho_bench_sup started basho_bench_worker:start_link(basho_bench_worker_4, 4) at pid <0.130.0>
+2021-05-06 12:49:51.856 [debug] <0.132.0>@basho_bench_keygen:new:105 ID 5 generating range 8000 to 10000
+2021-05-06 12:49:51.856 [debug] <0.133.0>@basho_bench_driver_http:new:44 ID: 5
+2021-05-06 12:49:51.856 [debug] <0.134.0>@basho_bench_keygen:new:105 ID 6 generating range 10000 to 12000
+2021-05-06 12:49:51.856 [debug] <0.135.0>@basho_bench_driver_http:new:44 ID: 6
+2021-05-06 12:49:51.856 [debug] <0.105.0> Supervisor basho_bench_sup started basho_bench_worker:start_link(basho_bench_worker_5, 5) at pid <0.132.0>
+2021-05-06 12:49:51.856 [debug] <0.136.0>@basho_bench_keygen:new:105 ID 7 generating range 12000 to 14000
+2021-05-06 12:49:51.856 [debug] <0.137.0>@basho_bench_driver_http:new:44 ID: 7
+2021-05-06 12:49:51.857 [debug] <0.138.0>@basho_bench_keygen:new:105 ID 8 generating range 14000 to 16000
+2021-05-06 12:49:51.857 [debug] <0.105.0> Supervisor basho_bench_sup started basho_bench_worker:start_link(basho_bench_worker_6, 6) at pid <0.134.0>
+2021-05-06 12:49:51.857 [debug] <0.139.0>@basho_bench_driver_http:new:44 ID: 8
+2021-05-06 12:49:51.857 [debug] <0.140.0>@basho_bench_keygen:new:105 ID 9 generating range 16000 to 18000
+2021-05-06 12:49:51.857 [debug] <0.141.0>@basho_bench_driver_http:new:44 ID: 9
+2021-05-06 12:49:51.857 [debug] <0.105.0> Supervisor basho_bench_sup started basho_bench_worker:start_link(basho_bench_worker_7, 7) at pid <0.136.0>
+2021-05-06 12:49:51.857 [debug] <0.142.0>@basho_bench_keygen:new:105 ID 10 generating range 18000 to 20000
+2021-05-06 12:49:51.857 [debug] <0.143.0>@basho_bench_driver_http:new:44 ID: 10
+2021-05-06 12:49:51.857 [debug] <0.144.0>@basho_bench_keygen:new:105 ID 11 generating range 20000 to 22000
+2021-05-06 12:49:51.857 [debug] <0.105.0> Supervisor basho_bench_sup started basho_bench_worker:start_link(basho_bench_worker_8, 8) at pid <0.138.0>
+2021-05-06 12:49:51.857 [debug] <0.145.0>@basho_bench_driver_http:new:44 ID: 11
+2021-05-06 12:49:51.857 [debug] <0.146.0>@basho_bench_keygen:new:105 ID 12 generating range 22000 to 24000
+2021-05-06 12:49:51.857 [debug] <0.147.0>@basho_bench_driver_http:new:44 ID: 12
+2021-05-06 12:49:51.857 [debug] <0.105.0> Supervisor basho_bench_sup started basho_bench_worker:start_link(basho_bench_worker_9, 9) at pid <0.140.0>
+2021-05-06 12:49:51.857 [debug] <0.148.0>@basho_bench_keygen:new:105 ID 13 generating range 24000 to 26000
+2021-05-06 12:49:51.857 [debug] <0.149.0>@basho_bench_driver_http:new:44 ID: 13
+2021-05-06 12:49:51.857 [debug] <0.105.0> Supervisor basho_bench_sup started basho_bench_worker:start_link(basho_bench_worker_10, 10) at pid <0.142.0>
+2021-05-06 12:49:51.857 [debug] <0.150.0>@basho_bench_keygen:new:105 ID 14 generating range 26000 to 28000
+2021-05-06 12:49:51.857 [debug] <0.151.0>@basho_bench_driver_http:new:44 ID: 14
+2021-05-06 12:49:51.858 [debug] <0.152.0>@basho_bench_keygen:new:105 ID 15 generating range 28000 to 30000
+2021-05-06 12:49:51.858 [debug] <0.105.0> Supervisor basho_bench_sup started basho_bench_worker:start_link(basho_bench_worker_11, 11) at pid <0.144.0>
+2021-05-06 12:49:51.858 [debug] <0.153.0>@basho_bench_driver_http:new:44 ID: 15
+2021-05-06 12:49:51.858 [debug] <0.154.0>@basho_bench_keygen:new:105 ID 16 generating range 30000 to 32000
+2021-05-06 12:49:51.858 [debug] <0.105.0> Supervisor basho_bench_sup started basho_bench_worker:start_link(basho_bench_worker_12, 12) at pid <0.146.0>
+2021-05-06 12:49:51.858 [debug] <0.155.0>@basho_bench_driver_http:new:44 ID: 16
+2021-05-06 12:49:51.858 [debug] <0.156.0>@basho_bench_keygen:new:105 ID 17 generating range 32000 to 34000
+2021-05-06 12:49:51.858 [debug] <0.157.0>@basho_bench_driver_http:new:44 ID: 17
+2021-05-06 12:49:51.858 [debug] <0.105.0> Supervisor basho_bench_sup started basho_bench_worker:start_link(basho_bench_worker_13, 13) at pid <0.148.0>
+2021-05-06 12:49:51.858 [debug] <0.105.0> Supervisor basho_bench_sup started basho_bench_worker:start_link(basho_bench_worker_14, 14) at pid <0.150.0>
+2021-05-06 12:49:51.858 [debug] <0.158.0>@basho_bench_keygen:new:105 ID 18 generating range 34000 to 36000
+2021-05-06 12:49:51.858 [debug] <0.159.0>@basho_bench_driver_http:new:44 ID: 18
+2021-05-06 12:49:51.858 [debug] <0.105.0> Supervisor basho_bench_sup started basho_bench_worker:start_link(basho_bench_worker_15, 15) at pid <0.152.0>
+2021-05-06 12:49:51.858 [debug] <0.160.0>@basho_bench_keygen:new:105 ID 19 generating range 36000 to 38000
+2021-05-06 12:49:51.858 [debug] <0.105.0> Supervisor basho_bench_sup started basho_bench_worker:start_link(basho_bench_worker_16, 16) at pid <0.154.0>
+2021-05-06 12:49:51.858 [debug] <0.161.0>@basho_bench_driver_http:new:44 ID: 19
+2021-05-06 12:49:51.858 [debug] <0.162.0>@basho_bench_keygen:new:105 ID 20 generating range 38000 to 40000
+2021-05-06 12:49:51.859 [debug] <0.105.0> Supervisor basho_bench_sup started basho_bench_worker:start_link(basho_bench_worker_17, 17) at pid <0.156.0>
+2021-05-06 12:49:51.859 [debug] <0.163.0>@basho_bench_driver_http:new:44 ID: 20
+2021-05-06 12:49:51.859 [debug] <0.164.0>@basho_bench_keygen:new:105 ID 21 generating range 40000 to 42000
+2021-05-06 12:49:51.859 [debug] <0.105.0> Supervisor basho_bench_sup started basho_bench_worker:start_link(basho_bench_worker_18, 18) at pid <0.158.0>
+2021-05-06 12:49:51.859 [debug] <0.165.0>@basho_bench_driver_http:new:44 ID: 21
+2021-05-06 12:49:51.859 [debug] <0.166.0>@basho_bench_keygen:new:105 ID 22 generating range 42000 to 44000
+2021-05-06 12:49:51.859 [debug] <0.105.0> Supervisor basho_bench_sup started basho_bench_worker:start_link(basho_bench_worker_19, 19) at pid <0.160.0>
+2021-05-06 12:49:51.859 [debug] <0.167.0>@basho_bench_driver_http:new:44 ID: 22
+2021-05-06 12:49:51.859 [debug] <0.168.0>@basho_bench_keygen:new:105 ID 23 generating range 44000 to 46000
+2021-05-06 12:49:51.859 [debug] <0.105.0> Supervisor basho_bench_sup started basho_bench_worker:start_link(basho_bench_worker_20, 20) at pid <0.162.0>
+2021-05-06 12:49:51.859 [debug] <0.169.0>@basho_bench_driver_http:new:44 ID: 23
+2021-05-06 12:49:51.859 [debug] <0.105.0> Supervisor basho_bench_sup started basho_bench_worker:start_link(basho_bench_worker_21, 21) at pid <0.164.0>
+2021-05-06 12:49:51.859 [debug] <0.170.0>@basho_bench_keygen:new:105 ID 24 generating range 46000 to 48000
+2021-05-06 12:49:51.859 [debug] <0.171.0>@basho_bench_driver_http:new:44 ID: 24
+2021-05-06 12:49:51.859 [debug] <0.105.0> Supervisor basho_bench_sup started basho_bench_worker:start_link(basho_bench_worker_22, 22) at pid <0.166.0>
+2021-05-06 12:49:51.859 [debug] <0.172.0>@basho_bench_keygen:new:105 ID 25 generating range 48000 to 50000
+2021-05-06 12:49:51.859 [debug] <0.173.0>@basho_bench_driver_http:new:44 ID: 25
+2021-05-06 12:49:51.859 [debug] <0.105.0> Supervisor basho_bench_sup started basho_bench_worker:start_link(basho_bench_worker_23, 23) at pid <0.168.0>
+2021-05-06 12:49:51.860 [debug] <0.105.0> Supervisor basho_bench_sup started basho_bench_worker:start_link(basho_bench_worker_24, 24) at pid <0.170.0>
+2021-05-06 12:49:51.860 [debug] <0.105.0> Supervisor basho_bench_sup started basho_bench_worker:start_link(basho_bench_worker_25, 25) at pid <0.172.0>
+2021-05-06 12:49:51.860 [debug] <0.53.0> Supervisor kernel_safe_sup started timer:start_link() at pid <0.174.0>
+2021-05-06 12:49:51.865 [info] <0.173.0>@basho_bench_worker:worker_idle_loop:237 Starting 100.0 ms/req fixed rate worker: <0.173.0> on nonode@nohost
+2021-05-06 12:49:51.865 [info] <0.171.0>@basho_bench_worker:worker_idle_loop:237 Starting 100.0 ms/req fixed rate worker: <0.171.0> on nonode@nohost
+2021-05-06 12:49:51.866 [info] <0.169.0>@basho_bench_worker:worker_idle_loop:237 Starting 100.0 ms/req fixed rate worker: <0.169.0> on nonode@nohost
+2021-05-06 12:49:51.866 [info] <0.165.0>@basho_bench_worker:worker_idle_loop:237 Starting 100.0 ms/req fixed rate worker: <0.165.0> on nonode@nohost
+2021-05-06 12:49:51.866 [info] <0.167.0>@basho_bench_worker:worker_idle_loop:237 Starting 100.0 ms/req fixed rate worker: <0.167.0> on nonode@nohost
+2021-05-06 12:49:51.866 [info] <0.163.0>@basho_bench_worker:worker_idle_loop:237 Starting 100.0 ms/req fixed rate worker: <0.163.0> on nonode@nohost
+2021-05-06 12:49:51.866 [info] <0.161.0>@basho_bench_worker:worker_idle_loop:237 Starting 100.0 ms/req fixed rate worker: <0.161.0> on nonode@nohost
+2021-05-06 12:49:51.866 [info] <0.159.0>@basho_bench_worker:worker_idle_loop:237 Starting 100.0 ms/req fixed rate worker: <0.159.0> on nonode@nohost
+2021-05-06 12:49:51.866 [info] <0.157.0>@basho_bench_worker:worker_idle_loop:237 Starting 100.0 ms/req fixed rate worker: <0.157.0> on nonode@nohost
+2021-05-06 12:49:51.866 [info] <0.155.0>@basho_bench_worker:worker_idle_loop:237 Starting 100.0 ms/req fixed rate worker: <0.155.0> on nonode@nohost
+2021-05-06 12:49:51.866 [info] <0.153.0>@basho_bench_worker:worker_idle_loop:237 Starting 100.0 ms/req fixed rate worker: <0.153.0> on nonode@nohost
+2021-05-06 12:49:51.866 [info] <0.151.0>@basho_bench_worker:worker_idle_loop:237 Starting 100.0 ms/req fixed rate worker: <0.151.0> on nonode@nohost
+2021-05-06 12:49:51.866 [info] <0.149.0>@basho_bench_worker:worker_idle_loop:237 Starting 100.0 ms/req fixed rate worker: <0.149.0> on nonode@nohost
+2021-05-06 12:49:51.866 [info] <0.147.0>@basho_bench_worker:worker_idle_loop:237 Starting 100.0 ms/req fixed rate worker: <0.147.0> on nonode@nohost
+2021-05-06 12:49:51.866 [info] <0.145.0>@basho_bench_worker:worker_idle_loop:237 Starting 100.0 ms/req fixed rate worker: <0.145.0> on nonode@nohost
+2021-05-06 12:49:51.866 [info] <0.143.0>@basho_bench_worker:worker_idle_loop:237 Starting 100.0 ms/req fixed rate worker: <0.143.0> on nonode@nohost
+2021-05-06 12:49:51.866 [info] <0.141.0>@basho_bench_worker:worker_idle_loop:237 Starting 100.0 ms/req fixed rate worker: <0.141.0> on nonode@nohost
+2021-05-06 12:49:51.866 [info] <0.139.0>@basho_bench_worker:worker_idle_loop:237 Starting 100.0 ms/req fixed rate worker: <0.139.0> on nonode@nohost
+2021-05-06 12:49:51.866 [info] <0.137.0>@basho_bench_worker:worker_idle_loop:237 Starting 100.0 ms/req fixed rate worker: <0.137.0> on nonode@nohost
+2021-05-06 12:49:51.866 [info] <0.135.0>@basho_bench_worker:worker_idle_loop:237 Starting 100.0 ms/req fixed rate worker: <0.135.0> on nonode@nohost
+2021-05-06 12:49:51.866 [info] <0.133.0>@basho_bench_worker:worker_idle_loop:237 Starting 100.0 ms/req fixed rate worker: <0.133.0> on nonode@nohost
+2021-05-06 12:49:51.866 [info] <0.131.0>@basho_bench_worker:worker_idle_loop:237 Starting 100.0 ms/req fixed rate worker: <0.131.0> on nonode@nohost
+2021-05-06 12:49:51.866 [info] <0.129.0>@basho_bench_worker:worker_idle_loop:237 Starting 100.0 ms/req fixed rate worker: <0.129.0> on nonode@nohost
+2021-05-06 12:49:51.866 [info] <0.127.0>@basho_bench_worker:worker_idle_loop:237 Starting 100.0 ms/req fixed rate worker: <0.127.0> on nonode@nohost
+2021-05-06 12:49:51.866 [info] <0.119.0>@basho_bench_worker:worker_idle_loop:237 Starting 100.0 ms/req fixed rate worker: <0.119.0> on nonode@nohost
+2021-05-06 12:49:51.866 [info] <0.33.0> Application basho_bench started on node nonode@nohost
+2021-05-06 12:49:51.889 [debug] <0.180.0> Supervisor inet_gethost_native_sup started undefined at pid <0.181.0>
+2021-05-06 12:49:51.889 [debug] <0.53.0> Supervisor kernel_safe_sup started inet_gethost_native:start_link() at pid <0.180.0>
+2021-05-06 12:51:11.864 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,book},{get,book}},377},{{{get,chapter},{get,chapter}},341},{{{{get,book},{get,book}},max_retries},72},{{{{get,book},{get,book}},{get,{conn_failed,{error,econnrefused}}}},305},{{{{get,chapter},{get,chapter}},max_retries},65},{{{{get,chapter},{get,chapter}},{get,{conn_failed,{error,econnrefused}}}},276},{{{{get,book_names,empty_h},{get,book_names,empty_h}},max_retries},74},{{{{get,book_names,empty_h},{get,book_names,empty_h}},{get,{conn_failed,{error,econnrefused}}}},396},{{{get,book_names,empty_h},{get,book_names,empty_h}},470}]
+2021-05-06 12:51:21.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book_names,empty_h},{get,book_names,empty_h}}
+2021-05-06 12:51:21.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book},{get,book}}
+2021-05-06 12:51:21.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,chapter},{get,chapter}}
+2021-05-06 12:51:21.862 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,book},{get,book}},374},{{{get,chapter},{get,chapter}},371},{{{{get,book},{get,book}},{get,{conn_failed,{error,econnrefused}}}},374},{{{{get,chapter},{get,chapter}},{get,{conn_failed,{error,econnrefused}}}},371},{{{{get,book_names,empty_h},{get,book_names,empty_h}},{get,{conn_failed,{error,econnrefused}}}},495},{{{get,book_names,empty_h},{get,book_names,empty_h}},495}]
+2021-05-06 12:51:31.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book_names,empty_h},{get,book_names,empty_h}}
+2021-05-06 12:51:31.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book},{get,book}}
+2021-05-06 12:51:31.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,chapter},{get,chapter}}
+2021-05-06 12:51:31.863 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,book},{get,book}},412},{{{get,chapter},{get,chapter}},372},{{{{get,book},{get,book}},{get,{conn_failed,{error,econnrefused}}}},412},{{{{get,chapter},{get,chapter}},{get,{conn_failed,{error,econnrefused}}}},372},{{{{get,book_names,empty_h},{get,book_names,empty_h}},{get,{conn_failed,{error,econnrefused}}}},475},{{{get,book_names,empty_h},{get,book_names,empty_h}},475}]
+2021-05-06 12:51:41.860 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book_names,empty_h},{get,book_names,empty_h}}
+2021-05-06 12:51:41.860 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book},{get,book}}
+2021-05-06 12:51:41.860 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,chapter},{get,chapter}}
+2021-05-06 12:51:41.861 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,book},{get,book}},364},{{{get,chapter},{get,chapter}},384},{{{{get,book},{get,book}},{get,{conn_failed,{error,econnrefused}}}},364},{{{{get,chapter},{get,chapter}},{get,{conn_failed,{error,econnrefused}}}},384},{{{{get,book_names,empty_h},{get,book_names,empty_h}},{get,{conn_failed,{error,econnrefused}}}},485},{{{get,book_names,empty_h},{get,book_names,empty_h}},485}]
+2021-05-06 12:51:51.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book_names,empty_h},{get,book_names,empty_h}}
+2021-05-06 12:51:51.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book},{get,book}}
+2021-05-06 12:51:51.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,chapter},{get,chapter}}
+2021-05-06 12:51:51.862 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,book},{get,book}},361},{{{get,chapter},{get,chapter}},381},{{{{get,book},{get,book}},{get,{conn_failed,{error,econnrefused}}}},361},{{{{get,chapter},{get,chapter}},{get,{conn_failed,{error,econnrefused}}}},381},{{{{get,book_names,empty_h},{get,book_names,empty_h}},{get,{conn_failed,{error,econnrefused}}}},488},{{{get,book_names,empty_h},{get,book_names,empty_h}},488}]
+2021-05-06 12:52:01.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book_names,empty_h},{get,book_names,empty_h}}
+2021-05-06 12:52:01.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book},{get,book}}
+2021-05-06 12:52:01.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,chapter},{get,chapter}}
+2021-05-06 12:52:01.862 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,book},{get,book}},353},{{{get,chapter},{get,chapter}},364},{{{{get,book},{get,book}},{get,{conn_failed,{error,econnrefused}}}},353},{{{{get,chapter},{get,chapter}},{get,{conn_failed,{error,econnrefused}}}},364},{{{{get,book_names,empty_h},{get,book_names,empty_h}},{get,{conn_failed,{error,econnrefused}}}},517},{{{get,book_names,empty_h},{get,book_names,empty_h}},517}]
+2021-05-06 12:52:11.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book_names,empty_h},{get,book_names,empty_h}}
+2021-05-06 12:52:11.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book},{get,book}}
+2021-05-06 12:52:11.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,chapter},{get,chapter}}
+2021-05-06 12:52:11.862 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,book},{get,book}},365},{{{get,chapter},{get,chapter}},397},{{{{get,book},{get,book}},{get,{conn_failed,{error,econnrefused}}}},365},{{{{get,chapter},{get,chapter}},{get,{conn_failed,{error,econnrefused}}}},397},{{{{get,book_names,empty_h},{get,book_names,empty_h}},{get,{conn_failed,{error,econnrefused}}}},493},{{{get,book_names,empty_h},{get,book_names,empty_h}},493}]
+2021-05-06 12:52:21.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book_names,empty_h},{get,book_names,empty_h}}
+2021-05-06 12:52:21.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book},{get,book}}
+2021-05-06 12:52:21.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,chapter},{get,chapter}}
+2021-05-06 12:52:21.862 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,book},{get,book}},376},{{{get,chapter},{get,chapter}},371},{{{{get,book},{get,book}},{get,{conn_failed,{error,econnrefused}}}},376},{{{{get,chapter},{get,chapter}},{get,{conn_failed,{error,econnrefused}}}},371},{{{{get,book_names,empty_h},{get,book_names,empty_h}},{get,{conn_failed,{error,econnrefused}}}},514},{{{get,book_names,empty_h},{get,book_names,empty_h}},514}]
+2021-05-06 12:52:31.860 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book_names,empty_h},{get,book_names,empty_h}}
+2021-05-06 12:52:31.860 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book},{get,book}}
+2021-05-06 12:52:31.860 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,chapter},{get,chapter}}
+2021-05-06 12:52:31.861 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,book},{get,book}},388},{{{get,chapter},{get,chapter}},358},{{{{get,book},{get,book}},{get,{conn_failed,{error,econnrefused}}}},388},{{{{get,chapter},{get,chapter}},{get,{conn_failed,{error,econnrefused}}}},358},{{{{get,book_names,empty_h},{get,book_names,empty_h}},{get,{conn_failed,{error,econnrefused}}}},488},{{{get,book_names,empty_h},{get,book_names,empty_h}},488}]
+2021-05-06 12:52:41.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book_names,empty_h},{get,book_names,empty_h}}
+2021-05-06 12:52:41.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book},{get,book}}
+2021-05-06 12:52:41.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,chapter},{get,chapter}}
+2021-05-06 12:52:41.862 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,book},{get,book}},422},{{{get,chapter},{get,chapter}},356},{{{{get,book},{get,book}},{get,{conn_failed,{error,econnrefused}}}},422},{{{{get,chapter},{get,chapter}},{get,{conn_failed,{error,econnrefused}}}},356},{{{{get,book_names,empty_h},{get,book_names,empty_h}},{get,{conn_failed,{error,econnrefused}}}},503},{{{get,book_names,empty_h},{get,book_names,empty_h}},503}]
+2021-05-06 12:52:51.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book_names,empty_h},{get,book_names,empty_h}}
+2021-05-06 12:52:51.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book},{get,book}}
+2021-05-06 12:52:51.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,chapter},{get,chapter}}
+2021-05-06 12:52:51.863 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,book},{get,book}},373},{{{get,chapter},{get,chapter}},396},{{{{get,book},{get,book}},{get,{conn_failed,{error,econnrefused}}}},373},{{{{get,chapter},{get,chapter}},{get,{conn_failed,{error,econnrefused}}}},396},{{{{get,book_names,empty_h},{get,book_names,empty_h}},{get,{conn_failed,{error,econnrefused}}}},469},{{{get,book_names,empty_h},{get,book_names,empty_h}},469}]
+2021-05-06 12:53:01.860 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book_names,empty_h},{get,book_names,empty_h}}
+2021-05-06 12:53:01.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book},{get,book}}
+2021-05-06 12:53:01.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,chapter},{get,chapter}}
+2021-05-06 12:53:01.861 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,book},{get,book}},387},{{{get,chapter},{get,chapter}},350},{{{{get,book},{get,book}},{get,{conn_failed,{error,econnrefused}}}},387},{{{{get,chapter},{get,chapter}},{get,{conn_failed,{error,econnrefused}}}},350},{{{{get,book_names,empty_h},{get,book_names,empty_h}},{get,{conn_failed,{error,econnrefused}}}},506},{{{get,book_names,empty_h},{get,book_names,empty_h}},506}]
+2021-05-06 12:53:11.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book_names,empty_h},{get,book_names,empty_h}}
+2021-05-06 12:53:11.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book},{get,book}}
+2021-05-06 12:53:11.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,chapter},{get,chapter}}
+2021-05-06 12:53:11.863 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,book},{get,book}},367},{{{get,chapter},{get,chapter}},386},{{{{get,book},{get,book}},{get,{conn_failed,{error,econnrefused}}}},367},{{{{get,chapter},{get,chapter}},{get,{conn_failed,{error,econnrefused}}}},386},{{{{get,book_names,empty_h},{get,book_names,empty_h}},{get,{conn_failed,{error,econnrefused}}}},518},{{{get,book_names,empty_h},{get,book_names,empty_h}},518}]
+2021-05-06 12:53:21.860 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book_names,empty_h},{get,book_names,empty_h}}
+2021-05-06 12:53:21.860 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book},{get,book}}
+2021-05-06 12:53:21.860 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,chapter},{get,chapter}}
+2021-05-06 12:53:21.861 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,book},{get,book}},390},{{{get,chapter},{get,chapter}},346},{{{{get,book},{get,book}},{get,{conn_failed,{error,econnrefused}}}},390},{{{{get,chapter},{get,chapter}},{get,{conn_failed,{error,econnrefused}}}},346},{{{{get,book_names,empty_h},{get,book_names,empty_h}},{get,{conn_failed,{error,econnrefused}}}},506},{{{get,book_names,empty_h},{get,book_names,empty_h}},506}]
+2021-05-06 12:53:31.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book_names,empty_h},{get,book_names,empty_h}}
+2021-05-06 12:53:31.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book},{get,book}}
+2021-05-06 12:53:31.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,chapter},{get,chapter}}
+2021-05-06 12:53:31.862 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,book},{get,book}},385},{{{get,chapter},{get,chapter}},363},{{{{get,book},{get,book}},{get,{conn_failed,{error,econnrefused}}}},385},{{{{get,chapter},{get,chapter}},{get,{conn_failed,{error,econnrefused}}}},363},{{{{get,book_names,empty_h},{get,book_names,empty_h}},{get,{conn_failed,{error,econnrefused}}}},510},{{{get,book_names,empty_h},{get,book_names,empty_h}},510}]
+2021-05-06 12:53:41.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book_names,empty_h},{get,book_names,empty_h}}
+2021-05-06 12:53:41.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book},{get,book}}
+2021-05-06 12:53:41.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,chapter},{get,chapter}}
+2021-05-06 12:53:41.862 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,book},{get,book}},404},{{{get,chapter},{get,chapter}},370},{{{{get,book},{get,book}},{get,{conn_failed,{error,econnrefused}}}},404},{{{{get,chapter},{get,chapter}},{get,{conn_failed,{error,econnrefused}}}},370},{{{{get,book_names,empty_h},{get,book_names,empty_h}},{get,{conn_failed,{error,econnrefused}}}},458},{{{get,book_names,empty_h},{get,book_names,empty_h}},458}]
+2021-05-06 12:53:51.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book_names,empty_h},{get,book_names,empty_h}}
+2021-05-06 12:53:51.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book},{get,book}}
+2021-05-06 12:53:51.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,chapter},{get,chapter}}
+2021-05-06 12:53:51.861 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,book},{get,book}},338},{{{get,chapter},{get,chapter}},367},{{{{get,book},{get,book}},{get,{conn_failed,{error,econnrefused}}}},338},{{{{get,chapter},{get,chapter}},{get,{conn_failed,{error,econnrefused}}}},367},{{{{get,book_names,empty_h},{get,book_names,empty_h}},{get,{conn_failed,{error,econnrefused}}}},524},{{{get,book_names,empty_h},{get,book_names,empty_h}},524}]
+2021-05-06 12:54:01.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book_names,empty_h},{get,book_names,empty_h}}
+2021-05-06 12:54:01.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book},{get,book}}
+2021-05-06 12:54:01.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,chapter},{get,chapter}}
+2021-05-06 12:54:01.862 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,book},{get,book}},399},{{{get,chapter},{get,chapter}},369},{{{{get,book},{get,book}},{get,{conn_failed,{error,econnrefused}}}},399},{{{{get,chapter},{get,chapter}},{get,{conn_failed,{error,econnrefused}}}},369},{{{{get,book_names,empty_h},{get,book_names,empty_h}},{get,{conn_failed,{error,econnrefused}}}},518},{{{get,book_names,empty_h},{get,book_names,empty_h}},518}]
+2021-05-06 12:54:11.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book_names,empty_h},{get,book_names,empty_h}}
+2021-05-06 12:54:11.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book},{get,book}}
+2021-05-06 12:54:11.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,chapter},{get,chapter}}
+2021-05-06 12:54:11.862 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,book},{get,book}},388},{{{get,chapter},{get,chapter}},362},{{{{get,book},{get,book}},{get,{conn_failed,{error,econnrefused}}}},388},{{{{get,chapter},{get,chapter}},{get,{conn_failed,{error,econnrefused}}}},362},{{{{get,book_names,empty_h},{get,book_names,empty_h}},{get,{conn_failed,{error,econnrefused}}}},494},{{{get,book_names,empty_h},{get,book_names,empty_h}},494}]
+2021-05-06 12:54:21.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book_names,empty_h},{get,book_names,empty_h}}
+2021-05-06 12:54:21.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book},{get,book}}
+2021-05-06 12:54:21.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,chapter},{get,chapter}}
+2021-05-06 12:54:21.862 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,book},{get,book}},379},{{{get,chapter},{get,chapter}},391},{{{{get,book},{get,book}},{get,{conn_failed,{error,econnrefused}}}},379},{{{{get,chapter},{get,chapter}},{get,{conn_failed,{error,econnrefused}}}},391},{{{{get,book_names,empty_h},{get,book_names,empty_h}},{get,{conn_failed,{error,econnrefused}}}},477},{{{get,book_names,empty_h},{get,book_names,empty_h}},477}]
+2021-05-06 12:54:31.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book_names,empty_h},{get,book_names,empty_h}}
+2021-05-06 12:54:31.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book},{get,book}}
+2021-05-06 12:54:31.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,chapter},{get,chapter}}
+2021-05-06 12:54:31.862 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,book},{get,book}},377},{{{get,chapter},{get,chapter}},392},{{{{get,book},{get,book}},{get,{conn_failed,{error,econnrefused}}}},377},{{{{get,chapter},{get,chapter}},{get,{conn_failed,{error,econnrefused}}}},392},{{{{get,book_names,empty_h},{get,book_names,empty_h}},{get,{conn_failed,{error,econnrefused}}}},488},{{{get,book_names,empty_h},{get,book_names,empty_h}},488}]
+2021-05-06 12:54:41.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book_names,empty_h},{get,book_names,empty_h}}
+2021-05-06 12:54:41.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book},{get,book}}
+2021-05-06 12:54:41.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,chapter},{get,chapter}}
+2021-05-06 12:54:41.862 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,book},{get,book}},356},{{{get,chapter},{get,chapter}},370},{{{{get,book},{get,book}},{get,{conn_failed,{error,econnrefused}}}},356},{{{{get,chapter},{get,chapter}},{get,{conn_failed,{error,econnrefused}}}},370},{{{{get,book_names,empty_h},{get,book_names,empty_h}},{get,{conn_failed,{error,econnrefused}}}},502},{{{get,book_names,empty_h},{get,book_names,empty_h}},502}]
+2021-05-06 12:54:51.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book_names,empty_h},{get,book_names,empty_h}}
+2021-05-06 12:54:51.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book},{get,book}}
+2021-05-06 12:54:51.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,chapter},{get,chapter}}
+2021-05-06 12:54:51.863 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,book},{get,book}},414},{{{get,chapter},{get,chapter}},363},{{{{get,book},{get,book}},{get,{conn_failed,{error,econnrefused}}}},414},{{{{get,chapter},{get,chapter}},{get,{conn_failed,{error,econnrefused}}}},363},{{{{get,book_names,empty_h},{get,book_names,empty_h}},{get,{conn_failed,{error,econnrefused}}}},469},{{{get,book_names,empty_h},{get,book_names,empty_h}},469}]
+2021-05-06 12:55:01.860 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book_names,empty_h},{get,book_names,empty_h}}
+2021-05-06 12:55:01.860 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book},{get,book}}
+2021-05-06 12:55:01.860 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,chapter},{get,chapter}}
+2021-05-06 12:55:01.861 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,book},{get,book}},409},{{{get,chapter},{get,chapter}},359},{{{{get,book},{get,book}},{get,{conn_failed,{error,econnrefused}}}},409},{{{{get,chapter},{get,chapter}},{get,{conn_failed,{error,econnrefused}}}},359},{{{{get,book_names,empty_h},{get,book_names,empty_h}},{get,{conn_failed,{error,econnrefused}}}},475},{{{get,book_names,empty_h},{get,book_names,empty_h}},475}]
+2021-05-06 12:55:11.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book_names,empty_h},{get,book_names,empty_h}}
+2021-05-06 12:55:11.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book},{get,book}}
+2021-05-06 12:55:11.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,chapter},{get,chapter}}
+2021-05-06 12:55:11.862 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,book},{get,book}},390},{{{get,chapter},{get,chapter}},374},{{{{get,book},{get,book}},{get,{conn_failed,{error,econnrefused}}}},390},{{{{get,chapter},{get,chapter}},{get,{conn_failed,{error,econnrefused}}}},374},{{{{get,book_names,empty_h},{get,book_names,empty_h}},{get,{conn_failed,{error,econnrefused}}}},518},{{{get,book_names,empty_h},{get,book_names,empty_h}},518}]
+2021-05-06 12:55:21.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book_names,empty_h},{get,book_names,empty_h}}
+2021-05-06 12:55:21.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book},{get,book}}
+2021-05-06 12:55:21.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,chapter},{get,chapter}}
+2021-05-06 12:55:21.862 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,book},{get,book}},385},{{{get,chapter},{get,chapter}},379},{{{{get,book},{get,book}},{get,{conn_failed,{error,econnrefused}}}},385},{{{{get,chapter},{get,chapter}},{get,{conn_failed,{error,econnrefused}}}},379},{{{{get,book_names,empty_h},{get,book_names,empty_h}},{get,{conn_failed,{error,econnrefused}}}},453},{{{get,book_names,empty_h},{get,book_names,empty_h}},453}]
+2021-05-06 12:55:31.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book_names,empty_h},{get,book_names,empty_h}}
+2021-05-06 12:55:31.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book},{get,book}}
+2021-05-06 12:55:31.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,chapter},{get,chapter}}
+2021-05-06 12:55:31.862 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,book},{get,book}},376},{{{get,chapter},{get,chapter}},366},{{{{get,book},{get,book}},{get,{conn_failed,{error,econnrefused}}}},376},{{{{get,chapter},{get,chapter}},{get,{conn_failed,{error,econnrefused}}}},366},{{{{get,book_names,empty_h},{get,book_names,empty_h}},{get,{conn_failed,{error,econnrefused}}}},511},{{{get,book_names,empty_h},{get,book_names,empty_h}},511}]
+2021-05-06 12:55:41.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book_names,empty_h},{get,book_names,empty_h}}
+2021-05-06 12:55:41.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book},{get,book}}
+2021-05-06 12:55:41.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,chapter},{get,chapter}}
+2021-05-06 12:55:41.862 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,book},{get,book}},373},{{{get,chapter},{get,chapter}},377},{{{{get,book},{get,book}},{get,{conn_failed,{error,econnrefused}}}},373},{{{{get,chapter},{get,chapter}},{get,{conn_failed,{error,econnrefused}}}},377},{{{{get,book_names,empty_h},{get,book_names,empty_h}},{get,{conn_failed,{error,econnrefused}}}},481},{{{get,book_names,empty_h},{get,book_names,empty_h}},481}]
+2021-05-06 12:55:51.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book_names,empty_h},{get,book_names,empty_h}}
+2021-05-06 12:55:51.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book},{get,book}}
+2021-05-06 12:55:51.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,chapter},{get,chapter}}
+2021-05-06 12:55:51.863 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,book},{get,book}},367},{{{get,chapter},{get,chapter}},393},{{{{get,book},{get,book}},{get,{conn_failed,{error,econnrefused}}}},367},{{{{get,chapter},{get,chapter}},{get,{conn_failed,{error,econnrefused}}}},393},{{{{get,book_names,empty_h},{get,book_names,empty_h}},{get,{conn_failed,{error,econnrefused}}}},505},{{{get,book_names,empty_h},{get,book_names,empty_h}},505}]
+2021-05-06 12:56:01.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book_names,empty_h},{get,book_names,empty_h}}
+2021-05-06 12:56:01.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book},{get,book}}
+2021-05-06 12:56:01.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,chapter},{get,chapter}}
+2021-05-06 12:56:01.862 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,book},{get,book}},362},{{{get,chapter},{get,chapter}},361},{{{{get,book},{get,book}},{get,{conn_failed,{error,econnrefused}}}},362},{{{{get,chapter},{get,chapter}},{get,{conn_failed,{error,econnrefused}}}},361},{{{{get,book_names,empty_h},{get,book_names,empty_h}},{get,{conn_failed,{error,econnrefused}}}},551},{{{get,book_names,empty_h},{get,book_names,empty_h}},551}]
+2021-05-06 12:56:11.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book_names,empty_h},{get,book_names,empty_h}}
+2021-05-06 12:56:11.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book},{get,book}}
+2021-05-06 12:56:11.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,chapter},{get,chapter}}
+2021-05-06 12:56:11.862 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,book},{get,book}},369},{{{get,chapter},{get,chapter}},361},{{{{get,book},{get,book}},{get,{conn_failed,{error,econnrefused}}}},369},{{{{get,chapter},{get,chapter}},{get,{conn_failed,{error,econnrefused}}}},361},{{{{get,book_names,empty_h},{get,book_names,empty_h}},{get,{conn_failed,{error,econnrefused}}}},482},{{{get,book_names,empty_h},{get,book_names,empty_h}},482}]
+2021-05-06 12:56:21.863 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book_names,empty_h},{get,book_names,empty_h}}
+2021-05-06 12:56:21.863 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book},{get,book}}
+2021-05-06 12:56:21.864 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,chapter},{get,chapter}}
+2021-05-06 12:56:21.864 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,book},{get,book}},383},{{{get,chapter},{get,chapter}},389},{{{{get,book},{get,book}},{get,{conn_failed,{error,econnrefused}}}},383},{{{{get,chapter},{get,chapter}},{get,{conn_failed,{error,econnrefused}}}},389},{{{{get,book_names,empty_h},{get,book_names,empty_h}},{get,{conn_failed,{error,econnrefused}}}},496},{{{get,book_names,empty_h},{get,book_names,empty_h}},496}]
+2021-05-06 12:56:31.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book_names,empty_h},{get,book_names,empty_h}}
+2021-05-06 12:56:31.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book},{get,book}}
+2021-05-06 12:56:31.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,chapter},{get,chapter}}
+2021-05-06 12:56:31.863 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,book},{get,book}},370},{{{get,chapter},{get,chapter}},353},{{{{get,book},{get,book}},{get,{conn_failed,{error,econnrefused}}}},370},{{{{get,chapter},{get,chapter}},{get,{conn_failed,{error,econnrefused}}}},353},{{{{get,book_names,empty_h},{get,book_names,empty_h}},{get,{conn_failed,{error,econnrefused}}}},509},{{{get,book_names,empty_h},{get,book_names,empty_h}},509}]
+2021-05-06 12:56:41.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book_names,empty_h},{get,book_names,empty_h}}
+2021-05-06 12:56:41.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book},{get,book}}
+2021-05-06 12:56:41.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,chapter},{get,chapter}}
+2021-05-06 12:56:41.862 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,book},{get,book}},357},{{{get,chapter},{get,chapter}},373},{{{{get,book},{get,book}},{get,{conn_failed,{error,econnrefused}}}},357},{{{{get,chapter},{get,chapter}},{get,{conn_failed,{error,econnrefused}}}},373},{{{{get,book_names,empty_h},{get,book_names,empty_h}},{get,{conn_failed,{error,econnrefused}}}},532},{{{get,book_names,empty_h},{get,book_names,empty_h}},532}]
+2021-05-06 12:56:51.865 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book_names,empty_h},{get,book_names,empty_h}}
+2021-05-06 12:56:51.865 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book},{get,book}}
+2021-05-06 12:56:51.866 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,chapter},{get,chapter}}
+2021-05-06 12:56:51.866 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,book},{get,book}},366},{{{get,chapter},{get,chapter}},403},{{{{get,book},{get,book}},{get,{conn_failed,{error,econnrefused}}}},366},{{{{get,chapter},{get,chapter}},{get,{conn_failed,{error,econnrefused}}}},403},{{{{get,book_names,empty_h},{get,book_names,empty_h}},{get,{conn_failed,{error,econnrefused}}}},507},{{{get,book_names,empty_h},{get,book_names,empty_h}},507}]
+2021-05-06 12:57:01.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book_names,empty_h},{get,book_names,empty_h}}
+2021-05-06 12:57:01.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book},{get,book}}
+2021-05-06 12:57:01.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,chapter},{get,chapter}}
+2021-05-06 12:57:01.863 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,book},{get,book}},362},{{{get,chapter},{get,chapter}},376},{{{{get,book},{get,book}},{get,{conn_failed,{error,econnrefused}}}},362},{{{{get,chapter},{get,chapter}},{get,{conn_failed,{error,econnrefused}}}},376},{{{{get,book_names,empty_h},{get,book_names,empty_h}},{get,{conn_failed,{error,econnrefused}}}},484},{{{get,book_names,empty_h},{get,book_names,empty_h}},484}]
+2021-05-06 12:57:11.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book_names,empty_h},{get,book_names,empty_h}}
+2021-05-06 12:57:11.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book},{get,book}}
+2021-05-06 12:57:11.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,chapter},{get,chapter}}
+2021-05-06 12:57:11.862 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,book},{get,book}},354},{{{get,chapter},{get,chapter}},352},{{{{get,book},{get,book}},{get,{conn_failed,{error,econnrefused}}}},354},{{{{get,chapter},{get,chapter}},{get,{conn_failed,{error,econnrefused}}}},352},{{{{get,book_names,empty_h},{get,book_names,empty_h}},{get,{conn_failed,{error,econnrefused}}}},541},{{{get,book_names,empty_h},{get,book_names,empty_h}},541}]
+2021-05-06 12:57:21.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book_names,empty_h},{get,book_names,empty_h}}
+2021-05-06 12:57:21.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book},{get,book}}
+2021-05-06 12:57:21.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,chapter},{get,chapter}}
+2021-05-06 12:57:21.862 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,book},{get,book}},389},{{{get,chapter},{get,chapter}},400},{{{{get,book},{get,book}},{get,{conn_failed,{error,econnrefused}}}},389},{{{{get,chapter},{get,chapter}},{get,{conn_failed,{error,econnrefused}}}},400},{{{{get,book_names,empty_h},{get,book_names,empty_h}},{get,{conn_failed,{error,econnrefused}}}},486},{{{get,book_names,empty_h},{get,book_names,empty_h}},486}]
+2021-05-06 12:57:31.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book_names,empty_h},{get,book_names,empty_h}}
+2021-05-06 12:57:31.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book},{get,book}}
+2021-05-06 12:57:31.863 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,chapter},{get,chapter}}
+2021-05-06 12:57:31.864 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,book},{get,book}},391},{{{get,chapter},{get,chapter}},355},{{{{get,book},{get,book}},{get,{conn_failed,{error,econnrefused}}}},391},{{{{get,chapter},{get,chapter}},{get,{conn_failed,{error,econnrefused}}}},355},{{{{get,book_names,empty_h},{get,book_names,empty_h}},{get,{conn_failed,{error,econnrefused}}}},487},{{{get,book_names,empty_h},{get,book_names,empty_h}},487}]
+2021-05-06 12:57:41.860 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book_names,empty_h},{get,book_names,empty_h}}
+2021-05-06 12:57:41.860 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book},{get,book}}
+2021-05-06 12:57:41.860 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,chapter},{get,chapter}}
+2021-05-06 12:57:41.861 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,book},{get,book}},390},{{{get,chapter},{get,chapter}},374},{{{{get,book},{get,book}},{get,{conn_failed,{error,econnrefused}}}},390},{{{{get,chapter},{get,chapter}},{get,{conn_failed,{error,econnrefused}}}},374},{{{{get,book_names,empty_h},{get,book_names,empty_h}},{get,{conn_failed,{error,econnrefused}}}},485},{{{get,book_names,empty_h},{get,book_names,empty_h}},485}]
+2021-05-06 12:57:51.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book_names,empty_h},{get,book_names,empty_h}}
+2021-05-06 12:57:51.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book},{get,book}}
+2021-05-06 12:57:51.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,chapter},{get,chapter}}
+2021-05-06 12:57:51.863 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,book},{get,book}},416},{{{get,chapter},{get,chapter}},344},{{{{get,book},{get,book}},{get,{conn_failed,{error,econnrefused}}}},416},{{{{get,chapter},{get,chapter}},{get,{conn_failed,{error,econnrefused}}}},344},{{{{get,book_names,empty_h},{get,book_names,empty_h}},{get,{conn_failed,{error,econnrefused}}}},459},{{{get,book_names,empty_h},{get,book_names,empty_h}},459}]
+2021-05-06 12:58:01.860 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book_names,empty_h},{get,book_names,empty_h}}
+2021-05-06 12:58:01.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book},{get,book}}
+2021-05-06 12:58:01.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,chapter},{get,chapter}}
+2021-05-06 12:58:01.861 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,book},{get,book}},373},{{{get,chapter},{get,chapter}},395},{{{{get,book},{get,book}},{get,{conn_failed,{error,econnrefused}}}},373},{{{{get,chapter},{get,chapter}},{get,{conn_failed,{error,econnrefused}}}},395},{{{{get,book_names,empty_h},{get,book_names,empty_h}},{get,{conn_failed,{error,econnrefused}}}},526},{{{get,book_names,empty_h},{get,book_names,empty_h}},526}]
+2021-05-06 12:58:11.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book_names,empty_h},{get,book_names,empty_h}}
+2021-05-06 12:58:11.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book},{get,book}}
+2021-05-06 12:58:11.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,chapter},{get,chapter}}
+2021-05-06 12:58:11.862 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,book},{get,book}},373},{{{get,chapter},{get,chapter}},365},{{{{get,book},{get,book}},{get,{conn_failed,{error,econnrefused}}}},373},{{{{get,chapter},{get,chapter}},{get,{conn_failed,{error,econnrefused}}}},365},{{{{get,book_names,empty_h},{get,book_names,empty_h}},{get,{conn_failed,{error,econnrefused}}}},507},{{{get,book_names,empty_h},{get,book_names,empty_h}},507}]
+2021-05-06 12:58:21.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book_names,empty_h},{get,book_names,empty_h}}
+2021-05-06 12:58:21.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book},{get,book}}
+2021-05-06 12:58:21.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,chapter},{get,chapter}}
+2021-05-06 12:58:21.861 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,book},{get,book}},398},{{{get,chapter},{get,chapter}},353},{{{{get,book},{get,book}},{get,{conn_failed,{error,econnrefused}}}},398},{{{{get,chapter},{get,chapter}},{get,{conn_failed,{error,econnrefused}}}},353},{{{{get,book_names,empty_h},{get,book_names,empty_h}},{get,{conn_failed,{error,econnrefused}}}},493},{{{get,book_names,empty_h},{get,book_names,empty_h}},493}]
+2021-05-06 12:58:31.860 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book_names,empty_h},{get,book_names,empty_h}}
+2021-05-06 12:58:31.860 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book},{get,book}}
+2021-05-06 12:58:31.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,chapter},{get,chapter}}
+2021-05-06 12:58:31.861 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,book},{get,book}},389},{{{get,chapter},{get,chapter}},364},{{{{get,book},{get,book}},{get,{conn_failed,{error,econnrefused}}}},389},{{{{get,chapter},{get,chapter}},{get,{conn_failed,{error,econnrefused}}}},364},{{{{get,book_names,empty_h},{get,book_names,empty_h}},{get,{conn_failed,{error,econnrefused}}}},452},{{{get,book_names,empty_h},{get,book_names,empty_h}},452}]
+2021-05-06 12:58:41.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book_names,empty_h},{get,book_names,empty_h}}
+2021-05-06 12:58:41.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book},{get,book}}
+2021-05-06 12:58:41.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,chapter},{get,chapter}}
+2021-05-06 12:58:41.862 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,book},{get,book}},383},{{{get,chapter},{get,chapter}},404},{{{{get,book},{get,book}},{get,{conn_failed,{error,econnrefused}}}},383},{{{{get,chapter},{get,chapter}},{get,{conn_failed,{error,econnrefused}}}},404},{{{{get,book_names,empty_h},{get,book_names,empty_h}},{get,{conn_failed,{error,econnrefused}}}},508},{{{get,book_names,empty_h},{get,book_names,empty_h}},508}]
+2021-05-06 12:58:51.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book_names,empty_h},{get,book_names,empty_h}}
+2021-05-06 12:58:51.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book},{get,book}}
+2021-05-06 12:58:51.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,chapter},{get,chapter}}
+2021-05-06 12:58:51.862 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,book},{get,book}},356},{{{get,chapter},{get,chapter}},364},{{{{get,book},{get,book}},{get,{conn_failed,{error,econnrefused}}}},356},{{{{get,chapter},{get,chapter}},{get,{conn_failed,{error,econnrefused}}}},364},{{{{get,book_names,empty_h},{get,book_names,empty_h}},{get,{conn_failed,{error,econnrefused}}}},521},{{{get,book_names,empty_h},{get,book_names,empty_h}},521}]
+2021-05-06 12:59:01.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book_names,empty_h},{get,book_names,empty_h}}
+2021-05-06 12:59:01.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book},{get,book}}
+2021-05-06 12:59:01.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,chapter},{get,chapter}}
+2021-05-06 12:59:01.862 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,book},{get,book}},357},{{{get,chapter},{get,chapter}},368},{{{{get,book},{get,book}},{get,{conn_failed,{error,econnrefused}}}},357},{{{{get,chapter},{get,chapter}},{get,{conn_failed,{error,econnrefused}}}},368},{{{{get,book_names,empty_h},{get,book_names,empty_h}},{get,{conn_failed,{error,econnrefused}}}},517},{{{get,book_names,empty_h},{get,book_names,empty_h}},517}]
+2021-05-06 12:59:11.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book_names,empty_h},{get,book_names,empty_h}}
+2021-05-06 12:59:11.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book},{get,book}}
+2021-05-06 12:59:11.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,chapter},{get,chapter}}
+2021-05-06 12:59:11.862 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,book},{get,book}},323},{{{get,chapter},{get,chapter}},357},{{{{get,book},{get,book}},{get,{conn_failed,{error,econnrefused}}}},323},{{{{get,chapter},{get,chapter}},{get,{conn_failed,{error,econnrefused}}}},357},{{{{get,book_names,empty_h},{get,book_names,empty_h}},{get,{conn_failed,{error,econnrefused}}}},532},{{{get,book_names,empty_h},{get,book_names,empty_h}},532}]
+2021-05-06 12:59:21.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book_names,empty_h},{get,book_names,empty_h}}
+2021-05-06 12:59:21.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book},{get,book}}
+2021-05-06 12:59:21.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,chapter},{get,chapter}}
+2021-05-06 12:59:21.863 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,book},{get,book}},420},{{{get,chapter},{get,chapter}},402},{{{{get,book},{get,book}},{get,{conn_failed,{error,econnrefused}}}},420},{{{{get,chapter},{get,chapter}},{get,{conn_failed,{error,econnrefused}}}},402},{{{{get,book_names,empty_h},{get,book_names,empty_h}},{get,{conn_failed,{error,econnrefused}}}},486},{{{get,book_names,empty_h},{get,book_names,empty_h}},486}]
+2021-05-06 12:59:31.860 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book_names,empty_h},{get,book_names,empty_h}}
+2021-05-06 12:59:31.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book},{get,book}}
+2021-05-06 12:59:31.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,chapter},{get,chapter}}
+2021-05-06 12:59:31.861 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,book},{get,book}},354},{{{get,chapter},{get,chapter}},380},{{{{get,book},{get,book}},{get,{conn_failed,{error,econnrefused}}}},354},{{{{get,chapter},{get,chapter}},{get,{conn_failed,{error,econnrefused}}}},380},{{{{get,book_names,empty_h},{get,book_names,empty_h}},{get,{conn_failed,{error,econnrefused}}}},480},{{{get,book_names,empty_h},{get,book_names,empty_h}},480}]
+2021-05-06 12:59:41.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book_names,empty_h},{get,book_names,empty_h}}
+2021-05-06 12:59:41.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book},{get,book}}
+2021-05-06 12:59:41.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,chapter},{get,chapter}}
+2021-05-06 12:59:41.862 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,book},{get,book}},327},{{{get,chapter},{get,chapter}},371},{{{{get,book},{get,book}},{get,{conn_failed,{error,econnrefused}}}},327},{{{{get,chapter},{get,chapter}},{get,{conn_failed,{error,econnrefused}}}},371},{{{{get,book_names,empty_h},{get,book_names,empty_h}},{get,{conn_failed,{error,econnrefused}}}},543},{{{get,book_names,empty_h},{get,book_names,empty_h}},543}]
+2021-05-06 12:59:51.861 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book_names,empty_h},{get,book_names,empty_h}}
+2021-05-06 12:59:51.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book},{get,book}}
+2021-05-06 12:59:51.862 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,chapter},{get,chapter}}
+2021-05-06 12:59:51.862 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,book},{get,book}},380},{{{get,chapter},{get,chapter}},393},{{{{get,book},{get,book}},{get,{conn_failed,{error,econnrefused}}}},380},{{{{get,chapter},{get,chapter}},{get,{conn_failed,{error,econnrefused}}}},393},{{{{get,book_names,empty_h},{get,book_names,empty_h}},{get,{conn_failed,{error,econnrefused}}}},507},{{{get,book_names,empty_h},{get,book_names,empty_h}},507}]
+2021-05-06 12:59:52.881 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book_names,empty_h},{get,book_names,empty_h}}
+2021-05-06 12:59:52.881 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,book},{get,book}}
+2021-05-06 12:59:52.881 [warning] <0.106.0>@basho_bench_stats_writer_csv:report_latency:103 No data for op: {{get,chapter},{get,chapter}}
+2021-05-06 12:59:52.882 [info] <0.106.0>@basho_bench_stats:process_stats:265 Errors:[{{{get,book},{get,book}},10},{{{get,chapter},{get,chapter}},9},{{{{get,book},{get,book}},{get,{conn_failed,{error,econnrefused}}}},10},{{{{get,chapter},{get,chapter}},{get,{conn_failed,{error,econnrefused}}}},9},{{{{get,book_names,empty_h},{get,book_names,empty_h}},{get,{conn_failed,{error,econnrefused}}}},9},{{{get,book_names,empty_h},{get,book_names,empty_h}},9}]
+2021-05-06 12:59:52.882 [info] <0.106.0>@basho_bench_stats:report_total_errors:294 Total Errors:
+2021-05-06 12:59:52.882 [info] <0.106.0>@basho_bench_stats:report_total_errors:300   {{{get,book},{get,book}},max_retries}: 72
+2021-05-06 12:59:52.883 [info] <0.106.0>@basho_bench_stats:report_total_errors:300   {{{get,book},{get,book}},{get,{conn_failed,{error,econnrefused}}}}: 19929
+2021-05-06 12:59:52.883 [info] <0.106.0>@basho_bench_stats:report_total_errors:300   {{{get,chapter},{get,chapter}},max_retries}: 65
+2021-05-06 12:59:52.883 [info] <0.106.0>@basho_bench_stats:report_total_errors:300   {{{get,chapter},{get,chapter}},{get,{conn_failed,{error,econnrefused}}}}: 19669
+2021-05-06 12:59:52.883 [info] <0.106.0>@basho_bench_stats:report_total_errors:300   {{{get,book_names,empty_h},{get,book_names,empty_h}},max_retries}: 74
+2021-05-06 12:59:52.883 [info] <0.106.0>@basho_bench_stats:report_total_errors:300   {{{get,book_names,empty_h},{get,book_names,empty_h}},{get,{conn_failed,{error,econnrefused}}}}: 26336
+2021-05-06 12:59:52.883 [info] <0.106.0>@basho_bench_stats_writer_csv:terminate:62 module=basho_bench_stats_writer_csv event=stop stats_sink=csv

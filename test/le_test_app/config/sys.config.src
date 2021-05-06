@@ -4,6 +4,6 @@
   {lesser_evil_agent,
    [{server_cookie, super_secret_cookie},
     {server_host, 'lesser_evil@${HOSTNAME}'},
-    {applications, [le_test_app, le_test_db]},
+    {applications, [ranch]},
     {report_interval, 1000}]}
 ].

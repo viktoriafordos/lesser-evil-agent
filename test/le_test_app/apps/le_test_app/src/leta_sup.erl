@@ -24,8 +24,24 @@ start_link() ->
 %%                  type => worker(),       % optional
 %%                  modules => modules()}   % optional
 init([]) ->
+  spawn(fun logger/0),
   SupFlags = #{strategy => one_for_all,
                intensity => 0,
                period => 1},
   ChildSpecs = [],
   {ok, {SupFlags, ChildSpecs}}.
+
+logger() ->
+    File = "/measurements/memory",
+    {ok, Fd} = file:open(File, [append]),
+    logger_loop(Fd).
+
+logger_loop(Fd) ->
+    Mem = round(erlang:memory(total)/1024/1024),
+    Log = io_lib:format("~p~n", [Mem]),
+    file:write(Fd, Log),
+    receive
+    after
+        1000 -> logger_loop(Fd)
+    end.
+
