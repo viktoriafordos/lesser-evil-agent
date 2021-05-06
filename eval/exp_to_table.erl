@@ -67,6 +67,6 @@ lists_find(Pattern, [H|T]) ->
 
 extract(Pattern, V) ->
     {match, [Res]} =
-        re:run(Pattern, ".*_(\\d+)_\\d+_con$", [{capture,[1],list}]),
+        re:run(V, Pattern, [{capture,[1],list}]),
     Res.
     
