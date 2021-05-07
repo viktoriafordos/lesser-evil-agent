@@ -42,7 +42,7 @@ run_results(In = #{run_path := RunPath,
        inactive_data => metrics(In, InactPath, lists:sort(InactFiles))}.
        
 
-metrics(In, Path, Files) ->
+metrics(In = #{exp := Exp}, Path, Files) ->
     {ok, MemoryFile} = file:read_file(Path ++ "/memory"),
     SplitMFile = binary:split(MemoryFile, <<"\n">>, [global]),
     MaxMemory = lists:max([binary_to_integer(V) || V <- SplitMFile, V =/= <<>>]),
@@ -69,9 +69,32 @@ metrics(In, Path, Files) ->
                                     maps:put(T, maps:get(T, Acc) + length(L), Acc)
                             end, #{gc => 0, kill => 0}, RawEvents)
         end,
+
+    TestFolderPath = Path ++ "/tests",
+    {ok, TestFolders} = file:list_dir(TestFolderPath),
+    [InnerTestFolder | _] = lists:sort(TestFolders),
+    SummaryCsvPath = TestFolderPath ++ "/" ++ InnerTestFolder ++ "/summary.csv",
+    {ok, SummaryCsv} = file:read_file(SummaryCsvPath),
+    CsvDataRows = tl(binary:split(SummaryCsv, <<"\n">>, [global])),
+    {TotalReqs0, TotalErrs} =
+        lists:foldl(fun(<<>>,Acc) -> Acc; 
+                       (V, {Sucs, Errs}) -> 
+                            {match, [Suc, Err]} =
+                                re:run(V, <<"(\\d+), (\\d+)$">>, [{capture,[1,2],binary}]),
+                            {Sucs + binary_to_integer(Suc), Errs + binary_to_integer(Err)}
+                    end, {0,0}, CsvDataRows),
+    TotalReqs =
+        case Exp of
+            "embedded-device-results" ->
+                TotalReqs0 + TotalErrs;
+            _ -> TotalReqs0
+        end,
     #{max_memory => MaxMemory,
       duration => extract("^(\\d+).*$", SecondToLast),      
-      le_res => LeRes}.
+      le_res => LeRes,
+      total_reqs => TotalReqs,
+      total_errs => TotalErrs}.
+%      summary_csv_path => SummaryCsvPath}.
     
 
 lists_find(Pattern, []) -> undefined;
