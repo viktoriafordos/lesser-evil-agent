@@ -76,19 +76,14 @@ metrics(In = #{exp := Exp}, Path, Files) ->
     SummaryCsvPath = TestFolderPath ++ "/" ++ InnerTestFolder ++ "/summary.csv",
     {ok, SummaryCsv} = file:read_file(SummaryCsvPath),
     CsvDataRows = tl(binary:split(SummaryCsv, <<"\n">>, [global])),
-    {TotalReqs0, TotalErrs} =
+    {TotalSucs, TotalErrs} =
         lists:foldl(fun(<<>>,Acc) -> Acc; 
                        (V, {Sucs, Errs}) -> 
                             {match, [Suc, Err]} =
                                 re:run(V, <<"(\\d+), (\\d+)$">>, [{capture,[1,2],binary}]),
                             {Sucs + binary_to_integer(Suc), Errs + binary_to_integer(Err)}
                     end, {0,0}, CsvDataRows),
-    TotalReqs =
-        case Exp of
-            "embedded-device-results" ->
-                TotalReqs0 + TotalErrs;
-            _ -> TotalReqs0
-        end,
+    TotalReqs = TotalSucs + TotalErrs,
     #{max_memory => MaxMemory,
       duration => extract("^(\\d+).*$", SecondToLast),      
       le_res => LeRes,
