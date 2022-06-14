@@ -1,0 +1,9 @@
+[{le_test_app,
+  [{http_ip, "0.0.0.0"},
+   {http_port, 8888}]},
+  {lesser_evil_agent,
+   [{server_cookie, super_secret_cookie},
+    {server_host, 'lesser_evil@${HOSTNAME}'},
+    {applications, [ranch]},
+    {report_interval, 1000}]}
+].

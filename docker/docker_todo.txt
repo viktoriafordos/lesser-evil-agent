@@ -1,0 +1,5 @@
+FIXME store measurement on shared storage
+docker run -d --memory="500m" --kernel-memory="500m" --mount type=bind,source=/tmp/,target=/measurements -p 8888:8888 --init sut-wo
+
+docker build -t sut-wo .
+docker run -d --memory="500m" --kernel-memory="500m" -p 8888:8888 --init sut-wo

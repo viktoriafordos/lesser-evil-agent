@@ -1,0 +1,18 @@
+{application, le_test_app,
+ [{description, "An OTP application"},
+  {vsn, "0.1.0"},
+  {registered, []},
+  {mod, {leta_app, []}},
+  {applications,
+   [kernel,
+    stdlib,
+    cowboy,
+    jsone,
+    le_test_db
+   ]},
+  {env,[]},
+  {modules, []},
+
+  {licenses, ["Apache 2.0"]},
+  {links, []}
+ ]}.
